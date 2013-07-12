@@ -10,7 +10,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="coulbourn-sound.vi" Type="VI" URL="../coulbourn-sound.vi"/>
+		<Item Name="coulbourn-sound.vi" Type="VI" URL="../../../../../bitbucket/coulbourn-sound/coulbourn-sound.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
