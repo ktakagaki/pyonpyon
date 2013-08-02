@@ -33,7 +33,9 @@
 				<Item Name="Write to XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File(string).vi"/>
 				<Item Name="Write to XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Write to XML File.vi"/>
 			</Item>
+			<Item Name="cs_loadStimList.vi" Type="VI" URL="../../../../../bitbucket/coulbourn-sound/cs_loadStimList.vi"/>
 			<Item Name="cs_loadStimParam.vi" Type="VI" URL="../../../../../bitbucket/coulbourn-sound/cs_loadStimParam.vi"/>
+			<Item Name="cs_saveStimList.vi" Type="VI" URL="../../../../../bitbucket/coulbourn-sound/cs_saveStimList.vi"/>
 			<Item Name="cs_saveStimParam.vi" Type="VI" URL="../../../../../bitbucket/coulbourn-sound/cs_saveStimParam.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
