@@ -1,0 +1,64 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData>
+<Version>13.0f2</Version>
+<I32>
+<Name>Total Trials</Name>
+<Val>60</Val>
+</I32>
+<EL>
+<Name>Trial Randomization</Name>
+<Choice>50% exactly</Choice>
+<Choice>Radio Selection 2</Choice>
+<Val>0</Val>
+</EL>
+<Array>
+<Name>Stims 1</Name>
+<Dimsize>1</Dimsize>
+<Dimsize>5</Dimsize>
+<DBL>
+<Name>Numeric</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>4.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>2000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>4000.00000000000000</Val>
+</DBL>
+</Array>
+<Array>
+<Name>Stims 2</Name>
+<Dimsize>1</Dimsize>
+<Dimsize>5</Dimsize>
+<DBL>
+<Name>Numeric</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>4.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>0.25000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>4000.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Numeric</Name>
+<Val>2000.00000000000000</Val>
+</DBL>
+</Array>
+</LVData>
