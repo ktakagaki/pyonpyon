@@ -1,4 +1,4 @@
-Coulbourn Sound
+Pyonpyon (Coulbourn Sound)
 K. Takagaki
 
 This project will perform the following two functions:
