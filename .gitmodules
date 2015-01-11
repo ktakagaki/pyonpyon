@@ -1,6 +1,0 @@
-[submodule "LV/labolabo"]
-	path = LV/labolabo
-	url = https://ktakagaki@github.com/ktakagaki/labolabo.git
-[submodule "LV2/labolabo2"]
-	path = LV2/labolabo2
-	url = https://github.com/ktakagaki/labolabo2.git
