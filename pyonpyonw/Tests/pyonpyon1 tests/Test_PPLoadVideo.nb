@@ -1,0 +1,377 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13768,        368]
+NotebookOptionsPosition[     11656,        290]
+NotebookOutlinePosition[     11996,        305]
+CellTagsIndexPosition[     11953,        302]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["PyonpyonW Behavior Analysis Tests", "Title",
+ CellChangeTimes->{
+  3.6173457613807526`*^9, {3.617346292408125*^9, 3.617346293240173*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["PPLoadVideo", "Subchapter",
+ CellChangeTimes->{
+  3.6173463366636567`*^9, {3.617363962500797*^9, 3.6173639638758755`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "PyonpyonW`"}]], "Input",
+ CellChangeTimes->{{3.6173463403848696`*^9, 3.6173463430250206`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"Welcome to NounouW, the Wolfram Language/Mathematica \
+interface to nounou!\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962280439679*^9}],
+
+Cell[BoxData["\<\"      ( current Git HEAD:  \
+5cfdc2787c37d1fef54ddbbfa42ff330b34ef343 )\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622804406786`*^9}],
+
+Cell[BoxData["\<\"      ( last updated:  Mon 18 Aug 2014 18:09:24 )\"\>"], \
+"Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962280441679*^9}],
+
+Cell[BoxData["\<\"      ( http://github.org/ktakagaki/nounouw )\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622804426785`*^9}],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622804766808`*^9}],
+
+Cell[BoxData["\<\"Welcome to ParaparaM, a Mathematica package for behavioral \
+parallel image analysis!\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622837088656`*^9}],
+
+Cell[BoxData["\<\"      ( last updated:  Thu 21 Aug 2014 18:13:20 )\"\>"], \
+"Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622837098656`*^9}],
+
+Cell[BoxData["\<\"      ( current Git HEAD:  HEAD)\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962283710866*^9}],
+
+Cell[BoxData["\<\"      ( http://github.org/ktakagaki/paraparam )\"\>"], \
+"Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962283711866*^9}],
+
+Cell[BoxData["\<\"ParaPara currently requires FFMPEG for video files, FTP \
+server for grid parallelization.\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962283727867*^9}],
+
+Cell[BoxData["\<\"Mon 25 Aug 2014 15:31:23\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622837288666`*^9}],
+
+Cell[BoxData["\<\"Welcome to PyonpyonW, a Mathematica package for behavior \
+graphing for our gerbil shuttlebox task!\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962283850874*^9}],
+
+Cell[BoxData["\<\"      ( last updated:  Mon 18 Aug 2014 22:43:49 )\"\>"], \
+"Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962283851874*^9}],
+
+Cell[BoxData["\<\"      ( current Git HEAD:  \
+22ccc1e17318ccddc271733334e53610e0053cb3)\"\>"], "Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.617962283852874*^9}],
+
+Cell[BoxData["\<\"      ( http://bitbucket.org/ktakagaki/pyonpyonw )\"\>"], \
+"Print",
+ CellChangeTimes->{3.617346368458475*^9, 3.617346884005963*^9, 
+  3.617347660690387*^9, 3.617348726980375*^9, 3.617349556865842*^9, 
+  3.6173496119839945`*^9, 3.617349979908038*^9, 3.617350079195717*^9, 
+  3.617364097133497*^9, 3.617364388912186*^9, 3.617366816343027*^9, 
+  3.617366964394495*^9, 3.6179622838548737`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tests", "Section",
+ CellChangeTimes->{{3.6173639686301475`*^9, 3.6173639734204216`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempFile", "=", 
+  "\"\<U:\\\\VSDdata\\\\project.SPP\\\\SPP.Coulb1\\\\SPP019\\\\2014-08-11 \
+15-25-29.942.wmv\>\""}]], "Input",
+ CellChangeTimes->{{3.617364040778274*^9, 3.6173640576022367`*^9}}],
+
+Cell[BoxData["\<\"U:\\\\VSDdata\\\\project.SPP\\\\SPP.Coulb1\\\\SPP019\\\\\
+2014-08-11 15-25-29.942.wmv\"\>"], "Output",
+ CellChangeTimes->{3.6173640657687035`*^9, 3.617364553573604*^9, 
+  3.6173668190831842`*^9, 3.617366969313777*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tempVideo", "=", 
+   RowBox[{"Import", "[", "tempFile", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6173640670577774`*^9, 3.6173640740851793`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Import", "::", "infer"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot infer format of file \[NoBreak]\\!\\(\\\"2014-08-11 \
+15-25-29.942.wmv\\\"\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/Import\\\", ButtonNote -> \
+\\\"Import::infer\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6173640747382164`*^9, 3.6173669704618425`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PPVideoOriginalFrameRate", "=", "15"}]], "Input",
+ CellChangeTimes->{{3.617364877703143*^9, 3.6173648785901937`*^9}}],
+
+Cell[BoxData["15"], "Output",
+ CellChangeTimes->{3.6173648160946198`*^9, 3.617364879685257*^9, 
+  3.617366821425318*^9, 3.6173669712838893`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PPVideoDownsampledFrameRate", "=", "15"}]], "Input",
+ CellChangeTimes->{{3.6173648813263507`*^9, 3.6173648819253845`*^9}}],
+
+Cell[BoxData["15"], "Output",
+ CellChangeTimes->{3.61736483463768*^9, 3.617364882662427*^9, 
+  3.617366822202362*^9, 3.6173669719289265`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$PPTempLocalDirectory", "=", " ", "\"\<U:\\\\Temp\>\""}]], "Input",
+ CellChangeTimes->{{3.6173645213707623`*^9, 3.617364522163808*^9}, {
+  3.6173704595584073`*^9, 3.617370466109782*^9}}],
+
+Cell[BoxData["\<\"U:\\\\Temp\"\>"], "Output",
+ CellChangeTimes->{3.6173642074618077`*^9, 3.6173643956305704`*^9, 
+  3.617364522778843*^9, 3.6173648837904916`*^9, 3.6173668279566917`*^9, 
+  3.617366973381009*^9, 3.617370468679929*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PPDissectIntoFrames", "[", "tempFile", "]"}]], "Input",
+ CellChangeTimes->{{3.617364411431474*^9, 3.6173644123145247`*^9}, {
+  3.617364542969998*^9, 3.617364548985342*^9}}],
+
+Cell[BoxData["\<\"U:\\\\VSDdata\\\\project.SPP\\\\SPP.Coulb1\\\\SPP019\\\\\
+2014-08-11 15-25-29.942.wmv\"\>"], "Print",
+ CellChangeTimes->{{3.6173645498013887`*^9, 3.6173645635761766`*^9}, 
+   3.6173647498228292`*^9, 3.6173648876097097`*^9, {3.617366829552783*^9, 
+   3.6173668570733566`*^9}, {3.617366975075106*^9, 3.617367001398612*^9}, 
+   3.617367312519407*^9, 3.6173675432166023`*^9, 3.6173714840280037`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$PPTempLocalFrameDirectory"], "Input"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Kenta\\\\AppData\\\\Local\\\\Temp\\\\2014-08-\
+11 15-25-29.942.wmv\"\>"], "Output",
+ CellChangeTimes->{
+  3.6173667836011543`*^9, 3.617366824888516*^9, {3.6173669724009533`*^9, 
+   3.617366984998674*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Run", "[", 
+  RowBox[{
+  "\"\<ffmpeg -i \>\"", "<>", " ", "tempFile", " ", "<>", " ", 
+   "\"\< -f image2 \>\"", "<>", "\n", "\t\t\t\t\t", 
+   "$PPTempLocalFrameDirectory", "<>", "\"\<\\\\t%07d.\>\"", "<>", 
+   "\"\<bmp\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6173671194633646`*^9, 3.617367138391447*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{{3.6173671397505255`*^9, 3.617367160831731*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Directory", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.617367176014599*^9, 3.6173671823659625`*^9}}],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\Kenta\\\\Documents\"\>"], "Output",
+ CellChangeTimes->{3.6173671833260174`*^9}]
+}, Open  ]],
+
+Cell[BoxData["Import"], "Input",
+ CellChangeTimes->{{3.617370361775814*^9, 3.617370362589861*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{952, 1102},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 143, 2, 90, "Title"],
+Cell[CellGroupData[{
+Cell[748, 28, 128, 2, 62, "Subchapter"],
+Cell[CellGroupData[{
+Cell[901, 34, 124, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1050, 40, 429, 6, 23, "Print"],
+Cell[1482, 48, 427, 6, 23, "Print"],
+Cell[1912, 56, 405, 6, 23, "Print"],
+Cell[2320, 64, 401, 5, 23, "Print"],
+Cell[2724, 71, 396, 5, 23, "Print"],
+Cell[3123, 78, 441, 6, 23, "Print"],
+Cell[3567, 86, 407, 6, 23, "Print"],
+Cell[3977, 94, 386, 5, 23, "Print"],
+Cell[4366, 101, 403, 6, 23, "Print"],
+Cell[4772, 109, 444, 6, 23, "Print"],
+Cell[5219, 117, 380, 5, 23, "Print"],
+Cell[5602, 124, 453, 6, 23, "Print"],
+Cell[6058, 132, 405, 6, 23, "Print"],
+Cell[6466, 140, 424, 6, 23, "Print"],
+Cell[6893, 148, 408, 6, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7350, 160, 94, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[7469, 165, 219, 4, 31, "Input"],
+Cell[7691, 171, 235, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7963, 179, 186, 4, 31, "Input"],
+Cell[8152, 185, 487, 10, 21, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8676, 200, 142, 2, 31, "Input"],
+Cell[8821, 204, 144, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9002, 211, 147, 2, 31, "Input"],
+Cell[9152, 215, 141, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9330, 222, 210, 3, 31, "Input"],
+Cell[9543, 227, 233, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9813, 235, 196, 3, 31, "Input"],
+Cell[10012, 240, 413, 5, 23, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10462, 250, 52, 0, 31, "Input"],
+Cell[10517, 252, 237, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10791, 261, 336, 7, 52, "Input"],
+Cell[11130, 270, 96, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11263, 276, 125, 2, 31, "Input"],
+Cell[11391, 280, 112, 1, 31, "Output"]
+}, Open  ]],
+Cell[11518, 284, 98, 1, 31, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

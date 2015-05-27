@@ -1,0 +1,4119 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    185461,       4110]
+NotebookOptionsPosition[    180129,       3930]
+NotebookOutlinePosition[    180471,       3945]
+CellTagsIndexPosition[    180428,       3942]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Coulb 1 Behavior Analysis Tests", "Title",
+ CellChangeTimes->{{3.617962468293423*^9, 3.617962491765766*^9}, {
+  3.618063630582575*^9, 3.618063635853877*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["SPP019  140813", "Chapter",
+ CellChangeTimes->{{3.617962498413146*^9, 3.6179625057495656`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "NounouW`"}]], "Input",
+ CellChangeTimes->{{3.618336309407707*^9, 3.618336313487941*^9}}],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["(origin)[https://github.com/ktakagaki/HokahokaW.git]",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small],
+ "\n",
+ StyleBox["current Git HEAD:  3d4110fc77f60ded9faaf750be6f7fbc171cbb75\n\
+newest file:  Tue 16 Sep 2014 00:26:42 ",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.619809225697045*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["(origin)[https://ktakagaki@github.com/ktakagaki/NounouW.git]",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small],
+ "\n",
+ StyleBox["current Git HEAD:  1e2a8c3ff50e054011b26b77698774a3688a2ae1\n\
+newest file:  Tue 16 Sep 2014 00:26:56 ",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.619809226030064*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData["\<\"<<Set JLink` java stack size to 6144Mb>>\"\>"], "Print",
+ CellChangeTimes->{3.6183363232304983`*^9, 3.618491273889686*^9, 
+  3.6198092260940676`*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "coulb1Folder", "=", "\"\<U:\\\\VSDdata\\\\project.SPP\\\\SPP.Coulb1\>\""}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "nlx2Folder", "=", "\"\<U:\\\\VSDdata\\\\project.SPP\\\\SPP.Nlx2\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"subjectString", "=", "\"\<SPP019\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{{3.617962619976099*^9, 3.617962699143627*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"videoFile", "=", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "coulb1Folder", ",", "\"\<_arch\>\"", ",", "subjectString", ",", 
+     "\"\<2014-08-13 16-38-54.153.wmv\>\""}], "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6179625116699047`*^9, 3.617962586090161*^9}, {
+  3.6179626702029715`*^9, 3.6179627047279463`*^9}, {3.619809322171563*^9, 
+  3.619809333801228*^9}}],
+
+Cell[BoxData["\<\"U:\\\\VSDdata\\\\project.SPP\\\\SPP.Coulb1\\\\_arch\\\\\
+SPP019\\\\2014-08-13 16-38-54.153.wmv\"\>"], "Output",
+ CellChangeTimes->{{3.617962559208623*^9, 3.617962586339175*^9}, 
+   3.6179627092612057`*^9, 3.6183362894935684`*^9, 3.6183363273357325`*^9, 
+   3.618491278631957*^9, 3.61980922998429*^9, 3.6198093531263337`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nlxNevFile", "=", 
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "nlx2Folder", ",", "\"\<_arch\>\"", ",", "subjectString", ",", 
+     "\"\<2014-08-13_16-26-29\>\"", ",", " ", "\"\<Events.nev\>\""}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6179625116699047`*^9, 3.617962586090161*^9}, {
+   3.6179626702029715`*^9, 3.617962754112771*^9}, 3.617965625707017*^9, 
+   3.6198093408026285`*^9}],
+
+Cell[BoxData["\<\"U:\\\\VSDdata\\\\project.SPP\\\\SPP.Nlx2\\\\_arch\\\\SPP019\
+\\\\2014-08-13_16-26-29\\\\Events.nev\"\>"], "Output",
+ CellChangeTimes->{3.617962754809811*^9, 3.617965626215046*^9, 
+  3.6183362900956025`*^9, 3.6183363281177773`*^9, 3.618491279472005*^9, 
+  3.619809231180359*^9, 3.6198093538293734`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Import Events", "Section",
+ CellChangeTimes->{{3.6179627617322073`*^9, 3.6179627839954805`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", "eventObj", "}"}], "=", 
+  RowBox[{"NNDataReader`load", "[", "nlxNevFile", "]"}]}]], "Input",
+ CellChangeTimes->{{3.617965600460573*^9, 3.6179656227138457`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  InterpretationBox[
+   RowBox[{"\[LeftGuillemet]", 
+    RowBox[{"JavaObject", "[", 
+     RowBox[{"nounou", ".", "data", ".", "XEvents"}], "]"}], 
+    "\[RightGuillemet]"}],
+   JLink`Objects`vm1`JavaObject23687801283280897], "}"}]], "Output",
+ CellChangeTimes->{3.61796563187737*^9, 3.6183362922877283`*^9, 
+  3.618336331372964*^9, 3.618491284467291*^9, 3.619809233374484*^9, 
+  3.6198093566865373`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"eventObj", "@", 
+    RowBox[{"lengths", "[", "]"}]}], ",", " ", 
+   RowBox[{"eventObj", "@", 
+    RowBox[{"ports", "[", "]"}]}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.6179656346255274`*^9, 3.617965646946232*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "100", ",", "465"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "100000000", ",", "100000001"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.617965647528265*^9, 3.618336332674038*^9, 
+  3.6184912854543476`*^9, 3.619809359935723*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Methods", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"eventObj", "@", 
+     RowBox[{"toArray", "[", "]"}]}], ")"}], "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6198093630038986`*^9, 3.619809404400266*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"events0", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<Events\>\"", ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"timestamp", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"duration", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"code", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"comment", "[", "]"}]}]}], "}"}], "&"}], " ", "/@", 
+     RowBox[{"eventObj", "@", 
+      RowBox[{"filterByPortA", "[", "0", "]"}]}]}]}], ")"}], " ", "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.618336357521459*^9, 3.618336410324479*^9}, {
+  3.618336504104843*^9, 3.61833651872468*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Events\"\>", 
+     RowBox[{"-", "9223372036423655351"}], "0", 
+     "0", "\<\"Starting Recording\"\>"},
+    {"\<\"Events\"\>", 
+     RowBox[{"-", "9223372034010724351"}], "0", 
+     "0", "\<\"Stopping Recording\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.618336389555291*^9, 3.6183364116525555`*^9}, {
+   3.618336508310084*^9, 3.6183365192147074`*^9}, 3.618491288964548*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"eventsStim", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<Stimulus\>\"", ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"timestamp", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"duration", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"code", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"comment", "[", "]"}]}]}], "}"}], "&"}], " ", "/@", 
+     RowBox[{"eventObj", "@", 
+      RowBox[{"filterByPortA", "[", "100000000", "]"}]}]}]}], ")"}], " ", "//",
+   "TableForm"}]], "Input",
+ CellChangeTimes->{{3.618336357521459*^9, 3.618336410324479*^9}, {
+  3.618336504104843*^9, 3.618336566850432*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036208297913"}], "16718", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036190838445"}], "22969", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036163035320"}], "14344", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036149573882"}], "12250", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036125068226"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036109253163"}], "12812", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036098028288"}], "14031", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036077698038"}], "14031", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036059219132"}], "12219", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036042178038"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036012722101"}], "12844", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035988331413"}], "13437", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035977318820"}], "11625", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035958930413"}], "13437", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035929717851"}], "12844", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035911540820"}], "12532", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035882221382"}], "13125", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035868550632"}], "15812", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035840493351"}], "19094", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035817269320"}], "12219", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035793033320"}], "16719", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035767010132"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035738829570"}], "15532", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035713206820"}], "12532", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035702592007"}], "13156", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035689787507"}], "13156", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035663976351"}], "33750", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035640876226"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035624097882"}], "20312", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035603849726"}], "13406", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035588542913"}], "11625", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035570313663"}], "13437", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035544548788"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035521793882"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035494151663"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035470205320"}], "13438", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035446536945"}], "12844", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035435187538"}], "13125", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035419677695"}], "12563", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035396087851"}], "31938", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035382597757"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035357278101"}], "12250", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035328150913"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035302802913"}], "12250", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035291413788"}], "12531", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035281080257"}], "13437", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035264456570"}], "12219", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035239936288"}], "12812", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035226042476"}], "24781", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035200801663"}], "12250", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035173135288"}], "12812", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035152167226"}], "16125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035141681382"}], "12531", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035113588288"}], "11937", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035091022070"}], "12813", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035068849726"}], "13438", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035046556445"}], "13750", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372035019409320"}], "12844", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034991558976"}], "14906", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034961639913"}], "11937", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034938479476"}], "12844", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034922228476"}], "15813", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034892827163"}], "19375", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034863955320"}], "14344", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034841874320"}], "13125", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034829814257"}], "12844", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034806348351"}], "18219", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034783002195"}], "12532", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034763779476"}], "14625", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034744468945"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034732048757"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034712003663"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034697349007"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034682119538"}], "12843", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034659212913"}], "16125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034648737820"}], "12532", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034627394382"}], "14312", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034604163195"}], "14625", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034584912101"}], "13125", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034556535007"}], "12812", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034540900632"}], "14312", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034524529882"}], "12812", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034501292101"}], "17000", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034479066320"}], "12844", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034468527351"}], "13438", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034453546913"}], "12531", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034434339101"}], "13406", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034404595320"}], "12532", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034383741007"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034354534101"}], "12219", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034330220757"}], "20594", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034301760976"}], "20906", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034285009788"}], "12218", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034268782663"}], "13125", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034250129695"}], "13157", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034231839507"}], "13437", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034218403726"}], "12219", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034192629007"}], "15812", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0002).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034172473726"}], "11938", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034150142538"}], "12843", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6183365385568137`*^9, 3.618336567199452*^9}, 
+   3.6184912958169403`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"eventsCoulb", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\"\<Coulbourn\>\"", ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"timestamp", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"duration", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"code", "[", "]"}]}], ",", " ", 
+        RowBox[{"#", "@", 
+         RowBox[{"comment", "[", "]"}]}]}], "}"}], "&"}], " ", "/@", 
+     RowBox[{"eventObj", "@", 
+      RowBox[{"filterByPortA", "[", "100000001", "]"}]}]}]}], ")"}], " ", "//",
+   "TableForm"}]], "Input",
+ CellChangeTimes->{{3.618336357521459*^9, 3.618336410324479*^9}, {
+  3.618336504104843*^9, 3.6183365988182607`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036395363788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036322474070"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036322473945"}], "0", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0002).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036273406757"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278632"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278538"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036204272757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036190823851"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036190823757"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036186820913"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036186313570"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036186313476"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036163015288"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036163015163"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036159014382"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036158574570"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036158574476"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036149559351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036145554445"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036145554351"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036145548695"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036125054382"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036121050538"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036121050445"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036121045007"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036109240070"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036109239976"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036105235882"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036104495632"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036104495538"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036098010351"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036098010226"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036094005538"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036093755226"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036093755101"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036077681351"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036077681257"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036073675101"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036073035601"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036073035507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036059206288"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036055201132"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036055201070"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036055195913"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036042161320"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036042161226"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036038158132"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036037801351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036037801257"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036012707601"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036012707476"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036009187538"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036009182288"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035988317757"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035984312320"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035984312226"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035984307413"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035977303413"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035973297851"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035973297757"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035973292913"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035958913601"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035958913476"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035954908570"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035954348445"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035954348351"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035929704726"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035925869476"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035925869382"}], "0", 
+     "8", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0008).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035925234351"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035925234226"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035911524976"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035911524882"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035907518632"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035906329413"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035906329288"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035882205038"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035878201726"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035878201632"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035878199882"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035868535413"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035864530413"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035864530320"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035864525288"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035840471538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035836466445"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035836466351"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035836461163"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035835521195"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035835521101"}], "0", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0002).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035817256601"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035817256507"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035813251601"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035812685601"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035812685507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035793016820"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035789012726"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035789012632"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035789007507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035766997757"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035762992820"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035762992726"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035762987632"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035738813976"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035738813882"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035734808695"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035734282132"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035734282038"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035713194101"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035709188945"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035709188882"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035709183726"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035702579663"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035702579570"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035700649663"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035700644351"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035689774226"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035689774132"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035685770101"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035685275851"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035685275757"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035663959163"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035663959070"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035659954757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035659389976"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035659389851"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035640860351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035636855320"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035636855226"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035636850132"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035624075570"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035624075476"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035620070757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035619265632"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035619265507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035603836195"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035599831007"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035599830945"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035599823663"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035588526601"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035588526507"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035584521507"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035584121320"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035584121226"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035570292726"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035566291726"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035566291632"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035566286476"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035544532913"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035544532820"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035541057976"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035541052382"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035521778007"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035517773101"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035517773007"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035517767851"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035494139101"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035494139007"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035490134132"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035489733913"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035489733820"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035489733788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035470189257"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035466184257"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035466184163"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035466178851"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035446519476"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035446519382"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035443478726"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035443474038"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035435175070"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035431170038"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035431169976"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035431164882"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035419660476"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035419660382"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035417450601"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035417445320"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035396055445"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035392050695"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035392050601"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035392045413"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035382581038"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035382580913"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035378576101"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035378075663"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035378075570"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035357261288"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035357261163"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035353257038"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035352871507"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035352871413"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035328137226"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035324132351"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035324132257"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035324126976"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035302787351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035298783382"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035298783288"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035298777945"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035291397507"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035291397413"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035287392945"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035286550507"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035286550413"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035281063226"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035277058445"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035277058382"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035277053288"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035264444070"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035264443976"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035261328976"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035261323695"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035239924070"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035235919101"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035235919007"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035235913882"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035226029695"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035226029570"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035222022820"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035221449413"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035221449288"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035200784726"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035200784632"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035196780695"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035196105507"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035196105413"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035173120632"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035169115726"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035169115663"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035169110507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035152146101"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035152146007"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035148144226"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035147715788"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035147715663"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035141666351"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035141666257"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035137661601"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035137236320"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035137236226"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035113571632"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035109567507"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035109567413"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035109562382"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035091006601"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035087002695"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035087002601"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035086997007"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035068833007"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035068832913"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035064827195"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035064207132"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035064207038"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035046543101"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035042538132"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035042538038"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035042532976"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035019394288"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035019394195"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035015389257"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035014708945"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372035014708851"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034991544226"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034991544132"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034987539351"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034985535070"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034985534945"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034961625132"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034961625038"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034959795288"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034959789945"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034938465288"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034934460445"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034934460351"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034934456163"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034922213382"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034922213288"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034918210788"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034917521601"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034917521507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034892804788"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034888801726"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034888801632"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034888796476"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034863937757"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034863937632"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034859932632"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034859680538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034859680445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034841857882"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034837852913"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034837852820"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034837847445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034829798632"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034829798507"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034825793445"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034825193226"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034825193101"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034806328726"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034802323663"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034802323570"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034802318413"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034782988945"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034778983788"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034778983726"}], "0", 
+     "11", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000B).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034778983695"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034778978538"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034763759351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034759760195"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034759760132"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034759754945"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034759545070"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034744454570"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034744454476"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034740450476"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034739870288"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034739870163"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034732034976"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034728030007"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034728029913"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034728021820"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034711990320"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034707986226"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034707986163"}], "0", 
+     "11", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000B).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034707986132"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034707981070"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034707046132"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034697335976"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034693330788"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034693330695"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034693325538"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034682106320"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034682106195"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034678101101"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034677500976"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034677500851"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034659196570"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034659196476"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034655192101"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034654751851"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034654751757"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034654751726"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034648722007"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034644716945"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034644716851"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034644711976"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034627377445"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034627377351"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034623372226"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034622906945"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034622906851"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034604147538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034600143476"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034600143413"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034600138163"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034584895163"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034580892788"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034580892726"}], "0", 
+     "11", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000B).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034580892695"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034580888538"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034561638476"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034556518820"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034556518726"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034552513757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034552158538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034552158445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034540882413"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034536878820"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034536878726"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034536873820"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034535374038"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034524514413"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034524514288"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034520509570"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034520079445"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034520079351"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034501279507"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034497275788"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034497275695"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034497270538"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034479050945"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034475045976"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034475045882"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034475040695"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034468510726"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034468510632"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034464505632"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034463705351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034463705257"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034453531007"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034449525976"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034449525882"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034449520882"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034434326445"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034430321257"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034430321195"}], "0", 
+     "11", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000B).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034430321163"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034430316038"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034404582351"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034400577320"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034400577226"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034400572070"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034383727507"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034383727413"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034379722632"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034379267382"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034379267288"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034354518663"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034350513445"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034350513382"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034350508320"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034330199820"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034326198695"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034326198632"}], "0", 
+     "11", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000B).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034326198601"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034326193445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034301739788"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034301739695"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034297734476"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034297199288"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034297199163"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034284994820"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034280990070"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034280989976"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034280984788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034268765507"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034268765382"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034264760476"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034264300257"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034264300163"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034250115882"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034246114882"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034246114788"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034246110507"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034231825007"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034231824913"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034227821163"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034227441038"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034227440945"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034218386663"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034218386570"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034214381570"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034213931538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034213931445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034192611788"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034190586851"}], "0", 
+     "15", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x000F).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034190586757"}], "0", 
+     "8", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0008).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034189871038"}], "0", 
+     "9", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0009).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034189870913"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034172457101"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034172457007"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034168451913"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034167966913"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034167966788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034154597413"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034154597320"}], "0", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0002).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034150127257"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034150127163"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034146123288"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034145717257"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034145717163"}], "50327687", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034092924163"}], "0", 
+     "63", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x003F).\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.6183365998063173`*^9, 3.618491297407031*^9, 3.618493012928153*^9, 
+   3.618493214705694*^9, 3.6184934558024845`*^9, 3.6184935523580065`*^9, 
+   3.6184941896264563`*^9, {3.6184944084109707`*^9, 3.6184944412688494`*^9}, 
+   3.6184966904304943`*^9, 3.6184967975036187`*^9, {3.618496953450538*^9, 
+   3.6184969768358755`*^9}, 3.618497027698785*^9, {3.61849706309781*^9, 
+   3.618497092507492*^9}, 3.618498194662532*^9, 3.618498256620075*^9, 
+   3.618498417935302*^9, 3.618498715418317*^9, 3.6184987551465893`*^9, 
+   3.618499949335893*^9, 3.618500671087175*^9, 3.6185008853694315`*^9, 
+   3.6185013597215624`*^9, 3.618501393640503*^9, 3.6185015627151732`*^9, 
+   3.618501684659148*^9, 3.618501741119377*^9, 3.6185019073428845`*^9, 
+   3.618502090045335*^9, 3.618502158128229*^9, 3.6185042187380886`*^9, 
+   3.6185043806693506`*^9, 3.618504591913433*^9, 3.6185046822926025`*^9, 
+   3.6185047480073614`*^9, 3.6185047900737677`*^9, 3.618504863184949*^9, 
+   3.6185050442223043`*^9, 3.618505163239111*^9, 3.6185052892173166`*^9, 
+   3.6185053276355143`*^9, 3.6185053577272353`*^9, 3.618505476228013*^9, 
+   3.6185055295160613`*^9, 3.6185055674282293`*^9, 3.6185056910993032`*^9, 
+   3.6185058069849315`*^9, 3.6185059098808165`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"FirstPosition", "[", 
+   RowBox[{"eventsCoulb", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Coulbourn\>\"", ",", " ", "_", ",", " ", "_", ",", " ", 
+      RowBox[{"x_", "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"x", "\[Equal]", "2"}], " ", "||", " ", 
+         RowBox[{"x", "\[Equal]", "3"}]}], ")"}]}], ",", " ", "_"}], "}"}]}], 
+   "]"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.618032056959667*^9, 3.618032134094079*^9}, {
+  3.6183366526793413`*^9, 3.618336654072421*^9}, {3.6184913091957054`*^9, 
+  3.618491311321827*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Filter Out False Port Changes:
+Coulbourn Bit Transition Bug (set new bits-then-unset old bits)\
+\>", "Section",
+ CellChangeTimes->{{3.6179627617322073`*^9, 3.6179627839954805`*^9}, {
+  3.6180636850936933`*^9, 3.6180637481412992`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ";;", "10"}], "]"}], "]"}], " ", "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6180630776849513`*^9, 3.6180630838123016`*^9}, 
+   3.618491342915634*^9, 3.6185059052615523`*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036395363788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036322474070"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036322473945"}], "0", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0002).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036273406757"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278632"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278538"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036204272757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822538"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036190823851"}], "0", 
+     "5", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0005).\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6184913242575665`*^9, 3.6184913436266747`*^9}, 
+   3.618493221142062*^9, 3.6184935559742136`*^9, 3.6184941917085752`*^9, {
+   3.618494413753276*^9, 3.618494443055952*^9}, 3.6184966924946127`*^9, 
+   3.618496799134712*^9, {3.618496954669608*^9, 3.6184969784119663`*^9}, 
+   3.6184970288618517`*^9, 3.6184970642158737`*^9, 3.61849709457161*^9, 
+   3.618498259122218*^9, 3.6184984190263643`*^9, 3.618498716785395*^9, 
+   3.6184987565926723`*^9, 3.6184999506889706`*^9, 3.6185008865154967`*^9, 
+   3.618501361511665*^9, 3.618501394874573*^9, 3.618501563834237*^9, 
+   3.6185016873993044`*^9, 3.618501743915537*^9, 3.618501908852971*^9, 
+   3.6185020916324253`*^9, 3.6185021600473385`*^9, 3.6185047493774395`*^9, 
+   3.618504791209832*^9, 3.618504864724037*^9, 3.618505164421179*^9, {
+   3.6185053291055984`*^9, 3.6185053588853016`*^9}, 3.618505478502143*^9, 
+   3.618505808379011*^9, {3.618505906006595*^9, 3.618505911458907*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dimensions", "[", "eventsCoulb", "]"}]], "Input",
+ CellChangeTimes->{{3.6183368541668653`*^9, 3.618336860453225*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"465", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.618336860849248*^9, 3.618491346608845*^9, 3.618493017608421*^9, 
+   3.618493557183283*^9, 3.6184941923246107`*^9, {3.6184944145863237`*^9, 
+   3.618494443857998*^9}, 3.6184966937186823`*^9, 3.618496799957759*^9, {
+   3.618496955205639*^9, 3.618496978969998*^9}, 3.6184970294878874`*^9, 
+   3.618497064699901*^9, 3.618497095206646*^9, 3.618498260257283*^9, 
+   3.61849841982741*^9, 3.6184987173554277`*^9, 3.6184987569866943`*^9, 
+   3.618499951827036*^9, 3.618500887816571*^9, 3.61850139551861*^9, 
+   3.618501564499275*^9, 3.61850168854137*^9, 3.618501746180667*^9, 
+   3.6185019094250035`*^9, 3.6185020929605017`*^9, 3.6185021607073765`*^9, 
+   3.6185042227283173`*^9, 3.6185046879039235`*^9, 3.6185047507635193`*^9, 
+   3.618504791743863*^9, 3.61850516618628*^9, 3.6185052916154537`*^9, {
+   3.6185053311167135`*^9, 3.6185053601453733`*^9}, 3.6185054797092123`*^9, 
+   3.618505532607238*^9, 3.61850557023339*^9, 3.6185058089440436`*^9, 
+   3.618505912754981*^9}]
+}, Open  ]],
+
+Cell["\<\
+Look at this crap ...
+The Coulbourn system always sets the new on bits (within one cycle, always, \
+it seems), and then stepwise, goes through the new off bits, unsetting them \
+one by one\
+\>", "Text",
+ CellChangeTimes->{{3.6184998275469275`*^9, 3.6184998601397915`*^9}, {
+  3.6184999525570774`*^9, 3.6184999612205725`*^9}, {3.6185002392584753`*^9, 
+  3.61850027971379*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztXV+uO71tvWj7kG302ZtIu4QUXkACJK8F0gJB3i66HK9n9jP19fyjKB6K
+kjUz9vU5wPfh/jSydERJFIfUSP/+l//+09/+5evr63/+cP/fn/78j//4+9//
+/M//+rf7P/7zn//717/86/2PP97/+7/7Hz9/jwRBEMQvwvfla8bl+2wue+F2
+DbVxy/b1db0dxo7w8Anjc3cM35fL93A2C4zb9aXpEQRBEARBEARBEARBEARB
+EARBEARBEARBEARBEARBEARBEARBEATxKZBfIw7fl7YvDYfluzj54dSj5I/4
+kmqToSW+9ZtBJQuUPogHeWnm0+2zxKxAVItRYErepjHIqtBgecgjfYhEhGpX
+P8zJu1IyCLSVVpReLxTlQBSm2W4Y1OxahgNKT77cjlFNfvF7xoBo1tOfS2/C
+vl6vL/DxNdIkCPEJfuy6OddWzPcuCqq2X6pg2jn74N6ORNC18i8v6/GFOFe8
+zZaihZ/iRcFPDrH8dIEXP26gD+5CXGbx488hezgsf27iddLX0nJ5oqdyTMh0
+VAsiX6YRGH73cXT9TrMhEYHaV/yMyXtqdiyELyWDQFNpZen1QkkOxEM7nSOY
+dUisXTMloPQJDUeZ7Ho6S89lowqPVj15sIualc/YtF3kgDQJROUEP3bdvJWt
++vMUVFV/VfdLEw44RWn4viY11Mof5a9NdxTv7dpnGLgWhXjRnzNJM9V847Ct
+0JvtT6oqf8p8/+disf/kmvNfz/GQrEil6M1oJG8n3Rnt6CnqVLOWZL4CHlVW
+6Gy5pdmQiCK1Z/lceoBAc2mgCZ0RlcPH4tErZ5OA+t9Mf94KRfrtkXz5/pZB
+LJE/15+Z0zYyvqB+rtS383A2X/0W+rLdwiWzuensWTmsy0LyL83/cpkHjyMH
++Uhmvlyugkse4An2ce0Er1o3pwoEfR0IU+umau9P20qTq4o/Gp8Of5tn07jN
+6Dq5BD/xj+QZCJwZ89S0i/JxFcLw/Y0H2ip/KayZ8JwN9Vdtuqt4NclG4M66
+N890WCUDMPu56ZXa+mR+UWktf+ng6W/RD5uSPMfxmvL34tR2h+bpyxxA+Z2n
+UEXYtevhl+SxKnIj8lsPD9AXKkXk1o5YevQggabS1G/s0nogKoePxV1A1+tR
+myMcFodaoSPWb0nYSuhVR39Wvds4+rlW3y71JjMoi8HNJYl6daTYPgsdtNHx
+nZpyUO/Z0hBdlvjZ75H8uNkKLU3w2nVzvN2kRadIZuumjEeFIvJN/I3xCfnb
+PKef1L+Th/slGcNJLBDLE8xTc97Z4ypAS9l3UP7DItHU8kD5a9N9xdvHDEWd
+la3ga8YGK1R5d63JHCvfYuvz6Qi1cctaLOYH0J9omqcFs9Vbcc2ntvGFa4mo
+F0gjW30dKZkies4KNej53VRbmqS+q3uSVqiPQa7K58nnFCsUrG6WXu1lhbbq
+fwNCNMmf6A1amSVoY7xpVSZ84K1KYKeOwuKLWz1jS8JhVmjVuqmaUCCpUgJ8
+dudv8pyL2tEKlaMymXyOPOPzFI2rMqlvr8eU/NOIgJ+/Nr2geDOeLUDDqacV
+qsf7m1qhYRgKVr7sR9L90vyn+Zz1a0kW0Eo/qkfPi9rIiHyk9mLPWjQ6lRbo
+ow6IyuFTkRkepwU92qzQYJe2+VhktlezQsFXVzErFFo7qbwXGrCBqTWL9iV5
+fDpYoXUTvHLdTF6dyyRbrNBd+QOec1G7WqELqXyXJJ684XnaGkEzrFAs/2WO
+qTQzf216QfF2sUK152eLk+itdvm3G9bybPpCt1Yknvn68t/BCs3XI7SXHqXL
+t8j8kxj/qTXNS9EWsQ1akkcVyZDK8J3FKjATSUkOeLP2/DeOj93+cKjGCkWl
+PfkdRAWCcvhgiD7ad3eEg1eyQu0os6M/t7IDX9o5+rlG3+qeEkGQ8rojZl+a
+PZPmz7+1yZ0WL/KbcrDDPf2s0NoJXrdu6hBtyReamVxlLfcMf9HvaFwBnulP
+4l+I1lkCP7m1I9SRJ5in5rzzo5kQeagbyF+wm7px8PNXp7uKF0Tkb9e411fU
+YviLkUc6CayuJ0roV16xYVZsK1Ca5Iny1xd/VZl2TB8DGPwxfPLbamGmq+LQ
+GUTgqVaSXi0b5D71SEX2Bi3rl+mKYpMAtRu/S2v05GAQaCgtJr1e8OVAyD46
+XkJldSXTc3VY4mwqOEe/3Rc9oVfNryGk/lR1BORnNaxO30omw5hPyvK6s53I
+VNpok9kn6dTN38yNdP0T2dp57+T87cySkDAqSjQ+wRvWTZE8//DxCLii1ZPp
+e7PQVs8Q/zE0PmVJmOdYN24b+mW03ClBeVpfe+l55w1F3I7cyZjL35+PqL9q
+050OAK7QFiuUIAiCeCN8xAl4caf3C0TBJhraSDnvS7pz8Rnjc0f0OgZpR3T6
+RJ4gCIJ4LxSDEb8Am0HnttEJQxFn4RPG5+7Io/6vhRd58SMIgiAIgiAIgiAI
+giAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAI4tMhv0ZsvrZlPboqPZT2U46q
+8I80UwfnFdPl2WN5aeZTdbRleoBz4dCQrUB0Zlr4HvlEHqFT+qKiy5uApORL
+z6dhXotwzPeeqBeI0R0GB8C4iO9BAaWnJ/aEutM9MPF94R99XAdxnuH1rGsL
+JJDGQIhP8GPXzVvksNDxfRRUbb9UwbRz9oG+HKBW/uVlPZAOFW/XC/7kcb/r
+kbzNKN7g+TshbojL70oQKcnZyk76WlouT/RUjgmZjmpB5Ms0Qte3fV2/k2zy
+WOD8qrSMqiwKtsuk50sPVTfTyw6fKJTWEaAXiAloGByDtca1a6YElD6hyz3y
+HXHavbCPVj15sAua4w3oIgekMSAqJ/ixYzxwLut5Cqqqv6r7pQkHqCBxl9ED
+tfJH+SvTPcXb60hT16KQl1jIC3+2+6JCN3jeFZDtjasqf8q83l4x5ZrzX0+8
+U2Wmndx8hGc0kreT7ox29BR1qllLMl8BjyordLbuBm2Fyms+pPkXFN3otsuU
+Q+E+xLw6V3ftqnkivUBMOFE6zTd4BqHGGNJvj+T5ihapV6H+bLoFDOrnSn07
+LPd0w4vM0vsThUtmc9PZs29Yl4XkX5r/5XJZb7pEcpCPZObL5Sq45BGUYB/X
+TvCqdXOqQNDXgTC1bqr2TrefduSPxqfD3+bZfHtdrF+S27zEP5JnIEBmzFPT
+LsrHVQj6RHhb/lJYM+E5G+qv2nSJLLXTsfW4s+R14dJOTghmP7esUNEnwiPW
+Uv7SwdPfoh82JXmO4zXl78Wp7XGYp2/XcYH68FOoIuza9fBL8lgVuRH5rYc1
+DRCbi4rObBeSA5aPX509Hfy+6AO3FwiBU030g63QEeu3JGwl9KqjP6sE5+jn
+Wn271JvonywGt13rKWM39qYjfPn42kbHd2rKQb1nS0N0WeJnv4fSao1WaOi6
+zIp1c7zdpEVnqN5k3ZSBoFBEvom/MT4hf5vn9JP6CR/ul2QMJ7FALM+if0PU
+bo+rAC1l30H5D4tE0/UM5a9NBy1ENJuAOiurcc3YYIXKkuaft5VvsfX5dIR/
+k/Fmml2+7VmDbKyC2ertPzGf2qs0riWiXiCNbPWFUhJaRcUayqJz2uXSQ/KB
+1bnjx++LJ0ErNIhz/cSnWKFgdbP0ai8rtFX/GxCiSf5Eb9DgFVXlsq3KhA+8
+VclcTbMNvosvbvWMLQmHWaFV66ZqQoGkSgnw2Z2/yXMuakcrVI7KZPI58ozP
+UzSuyqT0Be2e/NOIgJ+/2Qq1FS+4SL4OaDj1tEL1eH9TKzQMQ8HKl/1Iul+a
+/zQfLH4tyQJa6Uf16KVFRbSN31hXF9XTM58Wxk/4Vut6xHqBODMcPz5hhQa7
+tM3HIrO9mhUKvrqKWaHQ2knlvdCADUytWbQvyePTwQqtm+CV62byilwm2WKF
+7sof8JyL2tUKXUjluyTx5A3P09Ylw7BCsfyXOabSzPy16SvsXuhihWoPzxYn
+ScW8CXOTv2XcmL7QTQMknvn68t/BCs3XI7SXHqXLt8j8gyL/qTXNS9EW4ZpM
+tyXbFcmQypDHKgCTSDd5m66zdjn0PPn41WXE4qU9C9ALRIKz7fNXskLtKLOj
+P7eyA0PZ0c81+lavwuuvI+uO0F1pdkMbTHsbrcaOuntMOdiRjn5WaO0Er1s3
+dYi25AvNTK5ypPgZ/qLf0bgCPNOfxFVwnSXwk1s7Qh15gnlqzrvGCFoe6gby
+F+ymbhz8/NXpazWW4EFE/naNe30X2Pv8kEc6iWiuJ0roV16xYfZyvYoNPUWP
+d6z89cVfVaYd08cABn8Mn/y2WpjpqjhDOXhP9WDxatkg96lHKrI3aFm/LAfI
+HNE57fLoudILsEh/6PdFT4BeIDacaISW1ZVMz9VhqVdNBefot/uiJ/Sq+TWE
+1J+qjoAUrYbV6VvJZBhzrVBed7YTmfz9UIZ9kiq+/M3cSNc/ka2d907O384s
+CQmjokTjE7xh3RTJ8w8fj4ArWj2ZvjcLbfUM8R9D41OWhHmOdeO2oV9Gy50S
+lKf1tZeed95QxO3InYy5/P35iPqrNn3Eihe4QlusUIIgCOKN8BEn4MUDmi8Q
+BZtoaCPlDKfIK+AzxueO6HUM0o7o9Ik8QRAE8V4oBiN+ATaDzm1jLJZCHIpP
+GJ+7I4/6vxZe5MWPIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiC
+IAiCIIhPh/wasflEvvXoqvRQ2k85qsI/0kwdnFdMl2eP5aWZT9XBoOkBzoVD
+Q7YC0Zlp4XvkE3mETumLii5vApKSLz1UXbkvdv4E97CK3hR+tx5UdToSUXp6
+Yk+oO90DE98XPY/bFecZXhuvpOmK5drzijt6gp177Lp5ixwWOr6PgqrtlyqY
+ds4+0IfH18q/vKzXpiszoN8wkMf9rkfyNqN4g+fvhLghLr8rQaQkZys76Wtp
+uTzRUzkmZDqqBZEv0whd3/Z1/dZ3J8kTipPDk7Ho/HaZ9HzpIRpQSkA4/XFY
+Re8Jv1v3xlrj2jVTAkpfOFfT3LVppx35/2jVkwe7oDnegC5ymDVJvFWVE/zY
+MR44l/U8BVXVX9X90oQDVJC4y+iBWvmj/JXpnuLtdaSpa1HISyzkhT/bfVGh
+GzzvCsj2M1WVP2Veb6+Ycs35rzV3guyAVIrejEbydtKd0Y6eok41a0nmK7yo
+q8IKnS06fIOnLC0uutFtlykH/z5E51diDpaF0wWHVfQLcOJBes03eAahmob0
+2yN5vqJF6lWoP2N3qClA/Vypb4flnm7jhXqhL9stXDKbm87u9GFdFpJ/af6X
+y2W96RLJQT6SmS+Xq+CSB3KCfVw7wavWzakCQV8HwtS6qdo73X7akT8anw5/
+m2fTuM3oOrkEP/GP5Jnl9rTnqWkX5eMqBH0ivC1/KayZ8JwN9VdtutPqbsfW
+486S14VLOzkhmP3cskJFnwhXVEv5SwdPf4t+2JTkOctTyt+LU9vjME/fruMC
+9eGnUEXYtevhZ96GGY7Ibz2saYDYXFR0ZruQHBz5FEOEiZRc4fTEYRW9M/xJ
+cRCDI63QEeu3JGwl9KqjP6vebRz9XKtvl3rVzFIG0Xatp4xK2JuO8OXjaxsd
+36kpB/WeLQ3RZYmf/R5KqzVaoaHrMivWzfF2kxadoXqTdVPGnUIR+Sb+xviE
+/G2e00/q38nD/ZKM4cQJiOVZ8m/I2u1xFaCl7Dso/2GRaLp8ovy16fNDoHj7
+mKGos7IVf83YYIXKkuaft5VvsfX5dIR/k7HcOwFfJEwbq2C2evtPzKe2EYpr
+iagXSCNbfaGUhFZRsYay6Jx2ufSMdExjpSJroRX6gvAnxd5VH2+FgtXN0qu9
+rNBW/W9AiCb5E71Bg1dUlcu2KhM+8FYlQw6Zz23zxa2esSXhMCu0at1UTSiQ
+VCkBPrvzN3nORe1ohcpRmUw+R57xeYrGVZmUvqDdk38aEfDzN1mha5n5empf
+JF8HNJx6WqF6vL+pFRqGoWDly34k3S/Nf5rPWb+WZAGt9KN69NKiItrGb6yr
+i6L0HBqmlGLC6YDDKvoVCF8v3r/iRis02KVtPhaZ7dWsUPDVVcwKhdZOKu+F
+Bmxgas2ifUkenw5WaN0Er1w3EwOhTLLFCt2VP+A5F7WrFbqQyndJ4skbnqet
+msqwQrH8lzmm0sz8temKlm5OFytU27dbnCQV81b7Jn9r2TZ9oZsGSDzz9eW/
+gxWar0doLz1Kl2+R+QdF/lNrmpeiLcInKMmjimRIZchjFYBJpJu8TddZuxx6
+jnwQDSglIJz+OKyi90Rh2B+FV7JC7Sizoz+3sgMSdPRzjb7Vy9b668i6I2Zl
+mt3QBtPeRquxo+4eUw62g72fFVo7wevWTR2iLflCM5OrHCl+hr/odzSuAM/0
+J/GZX2cJ/OTWjlBHnmCemvOuMXCTh7qB/AW7qRsHP39temk9NSPyt2vc67vA
+3ueHPNJJAHU9UUK/8ooNs5frVWzoKXq8Y+WvL/6qMu2YPgYw+GP45LfVwkxX
+xVXubNRK0qtlg9ynHqnI3qBl/bIcIHNE57TLoxeWnrVRPycChNMfh1X0nihu
+6N0XZXUl03N1WOpVU8E5+u2+6Am9an4NIfWnqiMwwqyG1elbyWQYc61QXne2
+E5n8/VDGAplO6fzN3EjXP5GtnfdOzt/OLAkJo6JE4xO8Yd0UyfMPH4+AK1o9
+mb43C231DPEfQ+NTloR5jnXjtqFfRsudEpSntYjoeecNRdyO3MmYy9+fj6i/
+KtM9xQtcoS1WKEEQBPFG+IgT8OIBzReIgk00tJFy2hbmk/EZ43NH9DoGaUd0
++kSeIAiCeC8UgxG/AJtB57YxFkshDsUnjM/dkUf9Xwsv8uJHEARBEARBEARB
+EARBEARBEARBEARBEARBEARBEARBEARBEARBEMSnQ36N2Hxty3p0VXoo7acc
+VeEfaaYOziumy7PH8tLMp+rIy/QA58KhIVuB6My08D3yiTxCp/RFRZc3AUnJ
+kZ5TWhu9jkC9QExYbpk+QZsYF/E9iKD09MSeUHe6Bya+L3qe8irOM7w2XknT
+FbUDMj7Bj103b5HDQsf3UVC7KgrTztkH+nKAWvmXl/VYui3Prhf8yeN+1yN5
+m1G8wfN3QtwQl9+VIFKSs5Wd9LW0XJ7oqRwTMh3VgsiXaYSub/u6fuu7k+QJ
+xcnhyVh0frtMer70UGmIHqTdHaAXiAlzR5x0Osg6VNaumRJQ+oQu98h3xGn3
+wj5a9WTXoTnegC5yqB6QlRP82HUzcC7reQqqqr+OURQHnKIk7jJ6oFb+KH9l
+uifPXkeauhaFvMRCXviz3RcVusHzroBsb1xV+VPm9faKKdec/3qUuwoglaI3
+o5G8nXRntKOnqFPNWpLxBXhUWaGzMYlv8FTmX1B0o9suUw6+9JRFWqS3q+aJ
+9AJx+hl1zTd4BqHGGNJvj+T5ihapV6H+jN2hpgD1c6W+HZZ7uo0X6oW+bLdw
+yWxuOnv2DeuykPxL879cLutNl0gO8pHMfLlcBZfcTxTs49oJXrVuThUI+joQ
+ptZN1d7p9tOO/NH4dPjbPJvGbUbXySX4iX8kzyy3pz1PTbsoH1ch6BPhbflL
+Yc2E52yov2rTreohyUbgzpLXhUs7OSGY/dyyQkWfCNdSS/lLB09/i37YlOQ5
+i1TK34tT2+MwT9+u4wL14adQRdi16+Fn3oYZjshvPaxpgNhcVHRmu5AcfOmZ
+pbXdB9oNbi8QCz7MCh2xfkvCVkKvOvqz6t3G0c+1+napN9E/WQxuu9ZTxm7s
+TUf48vG1jY7v1JSDes+WhuiyxM9+D6U2Gq3Q0HWZFevmeLtJi87Qbcm6KeNO
+oYh8E39jfEL+Ns/pJ/Xv5OF+ScZwEgvE8gTz1Jx39rgK0FL2HZT/sEg0XT5R
+/tp0qziHZhNQZ2Ur/pqxwQqVJc0/byvfYuvz6Qj/JuPNNLt827MG2VgFs9Xb
+f2I+tY1QXEtEvUAa2eoLpSS0ioo1lEXntMul50gvX01seph2X9AKDeEjrVCw
+ull6tZcV2qr/DQjRJH+iN2jwiqpy2VZlwgfeqmTIIfO5bb641TO2JBxmhVat
+m6oJBZIqJcBnd/4mz7moHa1QOSqTyefIMz5P0bgqk9IXtHvyTyMCfv6+Vii6
+SL4OaDj1tEL1eH9TKzQMQ8HKl/1Iul+a/zSfs34tyQJa6Uf16KVFRbSN31hX
+F1XT8xYT8Y8Y7Q6I9cLH4+wJ3myFBru0zccis72aFQq+uopZodDaSeW90IAN
+TK1ZtC/J49PBCq2b4JXrZvLCXSbZYoXuyh/wnIva1QpdSOW7JPHkDc/TwIZb
+m39uhWL5L3NMpZn5a9OzFhV4tiH1F21xklTMmzA3+VvGjekL3TRA4pmvL/8d
+rNB8PUJ76VG6fIvMPyjyn1rTvBRtET4+SR5VJEMqQx6rAEwi3eRtus7a5dDz
+5ANKQ/SOG12gF4gEZ0/wV7JC7Sizoz+3suHEGI3MS8U+HwC9Cq+/jqw7Qnel
+2Q1tMO1ttBo76u4x5WDHTfpZobUTvG7d1CHaki80M7nKkeJn+It+R+MK8Ex/
+Ehi3flFObu0IdeQJ5qk57/xoJkQe6gbyF+ymbhz8/NXpS1JNRP52jXt9F9j7
+/JBHOgmgridK6FdesWH2cr2KDT1Fj3es/PXFX1WmHdPHAAZ/DJ/8tlqY6ao4
+Qzl4T7WS9GrZIPepRyqyN2hZvywHyBzROe3y6JV3chZK0++UAX49AHqB+IGe
+/4fvWCirK5meq8NSr5oKztFv90VP6FXzawipP1UdgRFmNaxO30omw5hrhfK6
+s53I5O+HMuyTVPHlb+ZGuv6JbO28d3L+dmZJSBgVJRqf4A3rpkief/h4BFzR
+6sn0vVloq2eI/xgan7IkzHOsG7dtiiJ3pwTlaX3tpeedNxRxO3InYy5/fz6i
+/qpK9+UJXKEtVihBEATxRviIE/DiAc2zneQrDW2knOEUeQV8xvjcEb2OQdoR
+nT6RJwiCIN4LxWDEL8Bm0LltPC5WQYTxCeNzd+RR/9fCi7z4EQRBEARBEARB
+EARBEARBEARBEARBEMTn4v8B88FMbw==
+    "], {{0, 64}, {898, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> True],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{642., Automatic},
+  ImageSizeRaw->{898, 64},
+  PlotRange->{{0, 898}, {0, 64}}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bitChangeIntervalMax", "=", "1000"}], ";"}]], "Input",
+ CellChangeTimes->{{3.618505170193509*^9, 3.6185051814961557`*^9}, {
+   3.6185052953626685`*^9, 3.6185052958566966`*^9}, {3.6185053343378973`*^9, 
+   3.618505364031596*^9}, {3.618505483231414*^9, 3.618505483782445*^9}, 
+   3.6185055353773966`*^9, {3.6185055738645973`*^9, 3.6185055756537*^9}, 
+   3.6185057017759137`*^9, {3.618505796899355*^9, 3.618505803140712*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "=", 
+   RowBox[{"ReplaceRepeated", "[", 
+    RowBox[{"eventsCoulb", ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"head___", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "x2_", ",", "0", ",", " ", "x4_", 
+           ",", " ", "xx__"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "y2_", ",", "0", ",", " ", "y4_", 
+           ",", " ", "yy__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "yB2_", ",", "0", ",", " ", "yB4_", 
+           ",", " ", "yyB__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "yC2_", ",", "0", ",", " ", "yC4_", 
+           ",", " ", "yyC__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "z2_", ",", "0", ",", " ", "z4_", 
+           ",", " ", "zz__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         "tail___"}], "}"}], "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"z2", "-", "y2"}], ")"}], "<=", "bitChangeIntervalMax"}], 
+         " ", "&&", " ", 
+         RowBox[{"x4", "<", "y4"}], " ", "&&", "  ", 
+         RowBox[{
+          RowBox[{"BitOr", "[", 
+           RowBox[{"x4", ",", " ", "yB4", ",", " ", "yC4", ",", " ", "z4"}], 
+           "]"}], "\[Equal]", "y4"}], " ", "&&", " ", 
+         RowBox[{"yB4", ">", "yC4"}], " ", "&&", " ", 
+         RowBox[{"yC4", ">", "z4"}]}], ")"}]}], "\[IndentingNewLine]", 
+      "\[Rule]", " ", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"head", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "x2", ",", "0", ",", " ", "x4", ",", 
+          " ", "xx"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "z2", ",", "0", ",", " ", "z4", ",", 
+          " ", "zz"}], "}"}], ",", " ", "tail"}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6184998947447705`*^9, 3.618499941561448*^9}, {
+   3.6185002896063557`*^9, 3.618500322183219*^9}, {3.618500445671282*^9, 
+   3.618500476923069*^9}, {3.6185005969699354`*^9, 3.6185006471638064`*^9}, {
+   3.618500710822448*^9, 3.6185007219950867`*^9}, {3.6185007550669785`*^9, 
+   3.61850087625091*^9}, {3.618500930966039*^9, 3.6185009782257423`*^9}, {
+   3.6185010785854826`*^9, 3.618501140032997*^9}, {3.6185011803273015`*^9, 
+   3.6185012081918955`*^9}, {3.6185013145749807`*^9, 3.618501341212504*^9}, {
+   3.61850137908267*^9, 3.6185013874451485`*^9}, 3.6185015579439*^9, {
+   3.618501632054139*^9, 3.6185016334372177`*^9}, {3.6185016778047557`*^9, 
+   3.618501679188835*^9}, {3.6185017524550257`*^9, 3.6185017915242605`*^9}, {
+   3.618501887627757*^9, 3.6185018995144367`*^9}, {3.618502168835841*^9, 
+   3.618502170495936*^9}, {3.618503996791394*^9, 3.6185040341405306`*^9}, {
+   3.618504102515441*^9, 3.618504187044276*^9}, 3.6185042627556067`*^9, 
+   3.618504536292252*^9, 3.6185045871071587`*^9, {3.618504758058936*^9, 
+   3.618504759713031*^9}, {3.6185050516137266`*^9, 3.618505051806738*^9}, 
+   3.618505188092533*^9, 3.6185057969173555`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dimensions", "[", "eventsCoulb", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"465", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6185042319498444`*^9, 3.6185042707850657`*^9, 3.618504538774394*^9, 
+   3.618504597168734*^9, 3.6185046921651673`*^9, 3.6185047622001734`*^9, 
+   3.618504794647029*^9, 3.6185048684862523`*^9, 3.618505054172873*^9, 
+   3.6185051907426844`*^9, 3.618505299156885*^9, {3.6185053362900095`*^9, 
+   3.618505365485679*^9}, 3.618505486593606*^9, 3.6185055373565097`*^9, 
+   3.618505577655814*^9, 3.6185057033480034`*^9, 3.618505812435243*^9, 
+   3.618505914990109*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "=", 
+   RowBox[{"ReplaceRepeated", "[", 
+    RowBox[{"eventsCoulb", ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"head___", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "x2_", ",", "0", ",", " ", "x4_", 
+           ",", " ", "xx__"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "y2_", ",", "0", ",", " ", "y4_", 
+           ",", " ", "yy__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "yB2_", ",", "0", ",", " ", "yB4_", 
+           ",", " ", "yyB__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "z2_", ",", "0", ",", " ", "z4_", 
+           ",", " ", "zz__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         "tail___"}], "}"}], "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"z2", "-", "y2"}], ")"}], "<=", "bitChangeIntervalMax"}], 
+         " ", "&&", " ", 
+         RowBox[{
+          RowBox[{"BitOr", "[", 
+           RowBox[{"x4", ",", " ", "yB4", ",", " ", "z4"}], "]"}], "\[Equal]",
+           "y4"}], " ", "&&", " ", 
+         RowBox[{"yB4", ">", "z4"}]}], ")"}]}], "\[IndentingNewLine]", 
+      "\[Rule]", " ", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"head", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "x2", ",", "0", ",", " ", "x4", ",", 
+          " ", "xx"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "z2", ",", "0", ",", " ", "z4", ",", 
+          " ", "zz"}], "}"}], ",", " ", "tail"}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6184998947447705`*^9, 3.618499941561448*^9}, {
+   3.6185002896063557`*^9, 3.618500322183219*^9}, {3.618500445671282*^9, 
+   3.618500476923069*^9}, {3.6185005969699354`*^9, 3.6185006471638064`*^9}, {
+   3.618500710822448*^9, 3.6185007219950867`*^9}, {3.6185007550669785`*^9, 
+   3.61850087625091*^9}, {3.618500930966039*^9, 3.6185009782257423`*^9}, {
+   3.6185010785854826`*^9, 3.618501140032997*^9}, {3.6185011803273015`*^9, 
+   3.6185012081918955`*^9}, {3.6185013145749807`*^9, 3.618501341212504*^9}, {
+   3.61850137908267*^9, 3.6185013874451485`*^9}, 3.6185015579439*^9, {
+   3.618501632054139*^9, 3.6185016334372177`*^9}, {3.6185016778047557`*^9, 
+   3.618501679188835*^9}, {3.6185017524550257`*^9, 3.6185017915242605`*^9}, {
+   3.618501887627757*^9, 3.6185018995144367`*^9}, {3.618502168835841*^9, 
+   3.618502170495936*^9}, {3.618503996791394*^9, 3.6185040341405306`*^9}, {
+   3.618504102515441*^9, 3.618504187044276*^9}, 3.618504240686344*^9, {
+   3.618504276579397*^9, 3.6185042841538305`*^9}, 3.618504455154611*^9, 
+   3.6185045438396835`*^9, 3.6185046030500703`*^9, {3.618504767337467*^9, 
+   3.6185047679094996`*^9}, {3.6185050615422945`*^9, 3.618505061725305*^9}, 
+   3.618505193766857*^9, 3.6185057969323564`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dimensions", "[", "eventsCoulb", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"451", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6185042319498444`*^9, 3.61850428693699*^9, 3.618504419765587*^9, 
+   3.61850446002989*^9, 3.6185045473608847`*^9, 3.618504605301199*^9, 
+   3.6185046953433495`*^9, {3.6185047697806067`*^9, 3.6185047965911403`*^9}, 
+   3.6185048699423356`*^9, 3.618505071197847*^9, 3.6185051962129974`*^9, 
+   3.6185053010449934`*^9, {3.6185053377770944`*^9, 3.618505367200777*^9}, 
+   3.6185054886797256`*^9, 3.6185055390186043`*^9, 3.6185055791619005`*^9, 
+   3.6185057046000752`*^9, 3.6185058136633134`*^9, 3.6185059160281687`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "=", 
+   RowBox[{"ReplaceRepeated", "[", 
+    RowBox[{"eventsCoulb", ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"head___", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "x2_", ",", "0", ",", " ", "x4_", 
+           ",", " ", "xx__"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "y2_", ",", "0", ",", " ", "y4_", 
+           ",", " ", "yy__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "z2_", ",", "0", ",", " ", "z4_", 
+           ",", " ", "zz__"}], "}"}], ",", " ", "tail___"}], "}"}], "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"z2", "-", "y2"}], ")"}], "<=", "bitChangeIntervalMax"}], 
+         "  ", "&&", " ", 
+         RowBox[{
+          RowBox[{"BitOr", "[", 
+           RowBox[{"x4", ",", " ", "z4"}], "]"}], "\[Equal]", "y4"}]}], " ", 
+        ")"}]}], "\[IndentingNewLine]", "\[Rule]", " ", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"head", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "x2", ",", "0", ",", " ", "x4", ",", 
+          " ", "xx"}], "}"}], ",", 
+        RowBox[{"(*", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<CoulbournTEMP\>\"", ",", " ", "y2", ",", " ", "0", ",", " ", 
+            "y4", ",", " ", "yy"}], "}"}], ","}], "*)"}], 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "z2", ",", "0", ",", " ", "z4", ",", 
+          " ", "zz"}], "}"}], ",", " ", "tail"}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6180596423514614`*^9, 3.6180596551721945`*^9}, {
+   3.6180597365378485`*^9, 3.618059964794904*^9}, {3.618059995714673*^9, 
+   3.6180599995568924`*^9}, {3.618060075425232*^9, 3.6180601009966946`*^9}, {
+   3.6180601336535625`*^9, 3.6180601740098705`*^9}, {3.6180602164963007`*^9, 
+   3.61806021804939*^9}, {3.6180602729445295`*^9, 3.6180602731465406`*^9}, {
+   3.618060545687129*^9, 3.6180605718256245`*^9}, {3.618060654921377*^9, 
+   3.618060768732887*^9}, {3.618060820121826*^9, 3.6180608395369368`*^9}, {
+   3.618060870433704*^9, 3.6180609832011538`*^9}, {3.618061035919169*^9, 
+   3.618061138492036*^9}, {3.618061237627706*^9, 3.618061256631793*^9}, {
+   3.618061304763546*^9, 3.61806130693067*^9}, {3.6180613967958097`*^9, 
+   3.618061418242037*^9}, {3.618061484296815*^9, 3.618061511786387*^9}, {
+   3.6180631007472706`*^9, 3.6180631052585287`*^9}, {3.6180644305303297`*^9, 
+   3.61806443368451*^9}, {3.618065099604598*^9, 3.618065106171974*^9}, {
+   3.618336681689*^9, 3.618336682876068*^9}, 3.61833675003391*^9, {
+   3.618336816508712*^9, 3.618336843805273*^9}, 3.6184915404649334`*^9, {
+   3.6184932259873395`*^9, 3.6184932262813563`*^9}, 3.618493536727113*^9, 
+   3.6184944306452417`*^9, {3.618496683801115*^9, 3.6184966839111214`*^9}, {
+   3.6184982031800184`*^9, 3.618498208563327*^9}, {3.61849873366236*^9, 
+   3.6184987507453375`*^9}, 3.6185021815285673`*^9, 3.6185046114805527`*^9, {
+   3.6185047749059*^9, 3.6185047755199347`*^9}, {3.6185050794283175`*^9, 
+   3.618505080252365*^9}, 3.618505199796202*^9, 3.618505796947357*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dimensions", "[", "eventsCoulb", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"311", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6183368675146294`*^9, 3.618491365790942*^9, 3.61849302143864*^9, 
+   3.618493540113306*^9, 3.6184941998270397`*^9, {3.6184944161454124`*^9, 
+   3.6184944459561176`*^9}, 3.6184967079894986`*^9, 3.6184968015398493`*^9, {
+   3.6184969578107877`*^9, 3.61849698058509*^9}, 3.6184970308579655`*^9, 
+   3.6184970660739803`*^9, 3.618497096238705*^9, 3.6184982106214447`*^9, 
+   3.6184982629334364`*^9, 3.618498420977476*^9, 3.6184987578087416`*^9, 
+   3.6185014000398684`*^9, 3.618501569371554*^9, 3.61850169378467*^9, 
+   3.6185018058190775`*^9, 3.6185019128161974`*^9, 3.618502102744061*^9, 
+   3.6185021987355514`*^9, 3.6185043207319226`*^9, 3.618504549878029*^9, 
+   3.6185046133266582`*^9, 3.618504698656539*^9, {3.6185047774740467`*^9, 
+   3.6185047978652134`*^9}, 3.6185048709923954`*^9, 3.618505082180475*^9, 
+   3.618505202092334*^9, 3.6185053027970934`*^9, {3.618505339149173*^9, 
+   3.6185053686648607`*^9}, 3.6185054906168365`*^9, 3.6185055405866947`*^9, 
+   3.6185055805209785`*^9, 3.618505705680137*^9, 3.618505815235403*^9, 
+   3.618505917685263*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Check for jumps and annotate with side", "Section",
+ CellChangeTimes->{{3.6179627617322073`*^9, 3.6179627839954805`*^9}, {
+  3.6180636850936933`*^9, 3.6180637481412992`*^9}, {3.6180637926608458`*^9, 
+  3.6180638037644806`*^9}, {3.6185053693669014`*^9, 3.61850537022195*^9}, {
+  3.6185057062841716`*^9, 3.6185057071072187`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "=", 
+   RowBox[{"ReplaceRepeated", "[", 
+    RowBox[{"eventsCoulb", ",", " ", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"head___", ",", " ", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "x2_", ",", "0", ",", " ", "x4_", 
+           ",", " ", "xx__"}], "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Coulbourn\>\"", ",", " ", "y2_", ",", "0", ",", " ", "y4_", 
+           ",", " ", "yy__"}], "}"}], ",", " ", "\[IndentingNewLine]", 
+         "tail___"}], "}"}], "/;", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"x4", "\[Equal]", " ", "6"}], " ", "||", 
+           RowBox[{"x4", "\[Equal]", "8"}]}], ")"}], " ", "&&", 
+         RowBox[{"y4", "\[Equal]", "1"}], " ", "&&", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"y2", "-", "x2"}], ")"}], "<", "4000000"}]}], ")"}]}], " ", 
+      RowBox[{"(*", 
+       RowBox[{"||", " ", 
+        RowBox[{"(*", 
+         RowBox[{
+         "This", " ", "condition", " ", "catches", " ", "shock", " ", 
+          "escape"}], "*)"}], "\[IndentingNewLine]", "\t\t\t  ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"x4", "\[Equal]", " ", "5"}], " ", "||", 
+            RowBox[{"x4", "\[Equal]", "9"}]}], ")"}], " ", "&&", " ", 
+          RowBox[{"y4", "\[Equal]", "1"}], " ", "&&", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"y2", "-", "x2"}], ")"}], "<=", 
+           "bitChangeIntervalMax"}]}], " ", ")"}]}], "  ", 
+       RowBox[{"(*", 
+        RowBox[{
+        "This", " ", "condition", " ", "catches", " ", "single", " ", "poll", 
+         " ", "changes"}], "*)"}], "*)"}], "\[IndentingNewLine]", "\[Rule]", 
+      " ", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"head", ",", " ", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "x2", ",", "0", ",", " ", "x4", ",", 
+          " ", "xx"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Coulbourn\>\"", ",", " ", "y2", ",", " ", "0", ",", " ", 
+          RowBox[{"x4", "+", "300"}], ",", " ", 
+          "\"\<Added to troubleshoot jump registration in early script. \
+\>\""}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<Coulbourn\>\"", ",", " ", "y2", ",", " ", "0", ",", " ", "y4", 
+          ",", " ", "yy"}], "}"}], ",", " ", "tail"}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6180596423514614`*^9, 3.6180596551721945`*^9}, {
+   3.6180597365378485`*^9, 3.618059964794904*^9}, {3.618059995714673*^9, 
+   3.6180599995568924`*^9}, {3.618060075425232*^9, 3.6180601009966946`*^9}, {
+   3.6180601336535625`*^9, 3.6180601740098705`*^9}, {3.6180602164963007`*^9, 
+   3.61806021804939*^9}, {3.6180602729445295`*^9, 3.6180602731465406`*^9}, {
+   3.618060545687129*^9, 3.6180605718256245`*^9}, {3.618060654921377*^9, 
+   3.618060768732887*^9}, {3.618060820121826*^9, 3.6180608395369368`*^9}, {
+   3.618060870433704*^9, 3.6180609832011538`*^9}, {3.618061035919169*^9, 
+   3.618061138492036*^9}, {3.618061237627706*^9, 3.618061256631793*^9}, {
+   3.618061304763546*^9, 3.61806130693067*^9}, {3.6180613967958097`*^9, 
+   3.618061418242037*^9}, {3.618061484296815*^9, 3.618061511786387*^9}, {
+   3.6180631007472706`*^9, 3.6180631052585287`*^9}, {3.6180644305303297`*^9, 
+   3.61806443368451*^9}, {3.618065099604598*^9, 3.618065106171974*^9}, {
+   3.618336681689*^9, 3.618336682876068*^9}, 3.61833675003391*^9, {
+   3.618336816508712*^9, 3.618336843805273*^9}, {3.618491484498732*^9, 
+   3.618491494217288*^9}, {3.6184915286852593`*^9, 3.6184915477533503`*^9}, {
+   3.618491588152661*^9, 3.618491590699806*^9}, {3.618491637368476*^9, 
+   3.618491790104212*^9}, {3.6184923860112953`*^9, 3.618492393420719*^9}, {
+   3.6184924398443747`*^9, 3.6184924649838123`*^9}, {3.6184928529710045`*^9, 
+   3.6184929351457043`*^9}, {3.618494390070921*^9, 3.618494391129982*^9}, {
+   3.6184966754186354`*^9, 3.6184966755686445`*^9}, {3.6184969065338545`*^9, 
+   3.618496971821589*^9}, {3.618497009712756*^9, 3.6184970208213916`*^9}, {
+   3.6184970554723735`*^9, 3.618497078752705*^9}, 3.6184982196489606`*^9, 
+   3.61849828747184*^9, {3.618498411226918*^9, 3.618498414078081*^9}, {
+   3.618498767499296*^9, 3.6184987782639112`*^9}, {3.6185020763835535`*^9, 
+   3.618502085668084*^9}, 3.618502207838072*^9, 3.6185046555730743`*^9, {
+   3.6185047840964255`*^9, 3.6185047849854765`*^9}, {3.6185048523873315`*^9, 
+   3.61850485848468*^9}, {3.618505090047925*^9, 3.6185050901659317`*^9}, 
+   3.6185053130636806`*^9, {3.6185057685747347`*^9, 3.618505796956358*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Nothing", " ", "should", " ", "be", " ", "changed", " ", "here", " ", 
+    "for", " ", "experiments", " ", "after", " ", "late", " ", 
+    RowBox[{"8", "/", "2014"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"Dimensions", "[", "eventsCoulb", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6184923987560244`*^9, 3.618492416172021*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"355", ",", "5"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6183368675146294`*^9, 3.618491365790942*^9, 3.618492467119935*^9, 
+   3.6184930253258624`*^9, 3.618494205207348*^9, 3.6184944497093325`*^9, 
+   3.6184967110676746`*^9, 3.618496805632084*^9, 3.618496960666951*^9, 
+   3.618497035087208*^9, 3.61849706782008*^9, 3.6184970983448257`*^9, 
+   3.6184982220941005`*^9, 3.6184982914170656`*^9, 3.6184984235586233`*^9, 
+   3.618498781178078*^9, 3.618501415394747*^9, 3.618501599219261*^9, 
+   3.618501697065858*^9, 3.6185018093142776`*^9, 3.6185019155993567`*^9, 
+   3.618502106088252*^9, 3.6185022100691996`*^9, 3.618504553952262*^9, 
+   3.6185046174278927`*^9, 3.618504665341633*^9, 3.618504719034704*^9, 
+   3.6185048033335257`*^9, 3.6185048735145397`*^9, 3.6185050923090544`*^9, 
+   3.618505205758543*^9, {3.6185053446364865`*^9, 3.618505372811098*^9}, 
+   3.6185054939980297`*^9, 3.6185055433688536`*^9, 3.618505583377142*^9, 
+   3.6185057089583244`*^9, 3.6185058264570456`*^9, 3.618505919870388*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"tempLastJumpToParity", "=", "False"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tempLastJumpToParityTrueIsSw1", "=", "Null"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"eventJumpAnnotator", "[", "event_", "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"event", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "===", "\"\<Coulbourn\>\""}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Switch", "[", 
+         RowBox[{
+          RowBox[{"event", "[", 
+           RowBox[{"[", "4", "]"}], "]"}], ",", "\[IndentingNewLine]", "2", 
+          ",", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"tempLastJumpToParity", "=", 
+             RowBox[{"!", "tempLastJumpToParity"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"tempLastJumpToParityTrueIsSw1", "\[Equal]", "Null"}], 
+              ",", 
+              RowBox[{
+              "tempLastJumpToParityTrueIsSw1", "=", 
+               "tempLastJumpToParity"}]}], "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"Xor", "[", 
+               RowBox[{
+               "tempLastJumpToParityTrueIsSw1", ",", " ", 
+                "tempLastJumpToParity"}], "]"}], ",", " ", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Message", "[", 
+               RowBox[{"eventJumpAnnotator", "::", "parityJump"}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}]}], ")"}], ",", 
+          "\[IndentingNewLine]", "3", ",", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"tempLastJumpToParity", "=", 
+             RowBox[{"!", "tempLastJumpToParity"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"tempLastJumpToParityTrueIsSw1", "\[Equal]", "Null"}], 
+              ",", 
+              RowBox[{"tempLastJumpToParityTrueIsSw1", "=", 
+               RowBox[{"!", "tempLastJumpToParity"}]}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"Xor", "[", 
+               RowBox[{
+                RowBox[{"!", "tempLastJumpToParityTrueIsSw1"}], ",", " ", 
+                "tempLastJumpToParity"}], "]"}], ",", " ", 
+              "\[IndentingNewLine]", 
+              RowBox[{"Message", "[", 
+               RowBox[{"eventJumpAnnotator", "::", "parityJump"}], "]"}]}], 
+             "\[IndentingNewLine]", "]"}]}], ")"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"x_", "/;", 
+           RowBox[{"MemberQ", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+              "5", ",", "8", ",", "13", ",", "306", ",", "308", ",", "305", 
+               ",", "309"}], "}"}], ",", "x"}], "]"}]}], ",", " ", 
+          RowBox[{"tempLastJumpToParity", "=", 
+           RowBox[{"!", "tempLastJumpToParity"}]}], ",", 
+          "\[IndentingNewLine]", "_", ",", " ", "Null"}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Join", "[", 
+       RowBox[{"event", ",", 
+        RowBox[{"{", "tempLastJumpToParity", "}"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"eventJumpAnnotator", "::", "parityJump"}], "=", 
+   "\"\<It seems that a jump was not registered!\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{{3.61803198550358*^9, 3.6180320413667755`*^9}, {
+   3.6180331657350855`*^9, 3.6180332942204347`*^9}, {3.618033327413333*^9, 
+   3.618033516774164*^9}, {3.6180335526302147`*^9, 3.618033577246623*^9}, {
+   3.618033627862518*^9, 3.6180337231929703`*^9}, {3.6180337820963397`*^9, 
+   3.6180338859432793`*^9}, {3.6180373519505234`*^9, 
+   3.6180373754508677`*^9}, {3.6180375307007475`*^9, 3.618037551745951*^9}, {
+   3.6180376065730867`*^9, 3.618037615940623*^9}, {3.6180376668685355`*^9, 
+   3.6180377058867674`*^9}, {3.6180378372612815`*^9, 
+   3.6180378420525556`*^9}, {3.618037977483302*^9, 3.6180380145544224`*^9}, {
+   3.6180567369392815`*^9, 3.618056739047402*^9}, {3.618492584774664*^9, 
+   3.6184926202296925`*^9}, {3.618492947866432*^9, 3.618492951588645*^9}, {
+   3.618494129439014*^9, 3.6184941766757154`*^9}, 3.618505971081317*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"tempPrintVar", "=", 
+    RowBox[{"eventsCoulb", "[", 
+     RowBox[{"[", 
+      RowBox[{"1", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Print", "[", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"eventJumpAnnotator", "[", "#", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", "tempPrintVar"}], "}"}]}], 
+         "]"}], "]"}], ";", 
+       RowBox[{"tempPrintVar", "=", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";"}], ")"}], "&"}], " ", "/@", 
+    " ", "eventsCoulb"}], ";"}], "*)"}]], "Input",
+ CellChangeTimes->{{3.617968026914358*^9, 3.617968034306781*^9}, {
+   3.6179680653605576`*^9, 3.6179680819065037`*^9}, {3.618031958312025*^9, 
+   3.6180319821683893`*^9}, {3.6180337027057986`*^9, 3.618033707786089*^9}, {
+   3.618033749674485*^9, 3.6180337634982758`*^9}, {3.6180380348735847`*^9, 
+   3.6180380406759167`*^9}, {3.6180380796121435`*^9, 3.618038088682662*^9}, 
+   3.6180638296879635`*^9, {3.6183369473301945`*^9, 3.6183369487042727`*^9}, {
+   3.6185048988599896`*^9, 3.6185049791105795`*^9}, {3.6185058481242847`*^9, 
+   3.6185058502134037`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "=", 
+   RowBox[{"eventJumpAnnotator", "/@", " ", "eventsCoulb"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.618505947538971*^9, 3.618505954994397*^9}, 
+   3.6185059866762094`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "=", 
+   RowBox[{"eventsCoulb", " ", "//.", " ", 
+    RowBox[{"If", "[", 
+     RowBox[{"tempLastJumpToParityTrueIsSw1", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"True", "\[Rule]", "\"\<Sw1\>\""}], ",", " ", 
+        RowBox[{"False", "\[Rule]", "\"\<Sw2\>\""}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"True", "\[Rule]", "\"\<Sw2\>\""}], ",", " ", 
+        RowBox[{"False", "\[Rule]", "\"\<Sw1\>\""}]}], "}"}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6185059947466707`*^9, 3.618506093634327*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsCoulb", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ";;", "10"}], "]"}], "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6185058700655394`*^9, 3.618505900820298*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036395363788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036322473945"}], "0", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0002).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036273406757"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278538"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036204272757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "306", "\<\"Added to troubleshoot jump registration in early script. \
+\"\>", "\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036190823757"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036186820913"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036186313476"}], "0", 
+     "306", "\<\"Added to troubleshoot jump registration in early script. \
+\"\>", "\<\"Sw2\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6185058816282005`*^9, 3.618505922735552*^9}, 
+   3.6185059906554365`*^9, 3.618506106892085*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Separate into trials", "Section",
+ CellChangeTimes->{{3.6179627617322073`*^9, 3.6179627839954805`*^9}, {
+  3.6179641821074476`*^9, 3.617964187362748*^9}, {3.61806384309173*^9, 
+  3.6180638462519107`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"trialStartTimes", "=", 
+   RowBox[{
+    RowBox[{"Cases", "[", 
+     RowBox[{"eventsCoulb", ",", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Coulbourn\>\"", ",", " ", "_", ",", " ", "0", ",", " ", 
+        RowBox[{"x_", "/;", 
+         RowBox[{"MemberQ", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"4", ",", "7", ",", "10"}], "}"}], ",", " ", "x"}], 
+          "]"}]}], ",", "__"}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", " ", "2"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6185061143175097`*^9, 3.6185061214279165`*^9}, {
+  3.618506221609647*^9, 3.6185062423288317`*^9}, {3.618506320385296*^9, 
+  3.6185063830488806`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsAll", "=", 
+   RowBox[{"SortBy", "[", 
+    RowBox[{
+     RowBox[{"Join", "[", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Append", "[", 
+          RowBox[{"#", ",", "\"\<XXX\>\""}], "]"}], "&"}], " ", "/@", 
+        "events0"}], ",", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Append", "[", 
+          RowBox[{"#", ",", "\"\<XXX\>\""}], "]"}], "&"}], " ", "/@", 
+        "eventsStim"}], ",", "eventsCoulb"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "2", "]"}], "]"}], "&"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.618506542353992*^9, 3.6185065465682335`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eventsAll", "[", 
+   RowBox[{"[", 
+    RowBox[{"1", ";;", "10"}], "]"}], "]"}], "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.618506550952484*^9, 3.6185065592179565`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Events\"\>", 
+     RowBox[{"-", "9223372036423655351"}], "0", 
+     "0", "\<\"Starting Recording\"\>", "\<\"XXX\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036395363788"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036322473945"}], "0", 
+     "2", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0002).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036273406757"}], "0", 
+     "3", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0003).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036208297913"}], "16718", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", \
+"\<\"XXX\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278538"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036204272757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "306", "\<\"Added to troubleshoot jump registration in early script. \
+\"\>", "\<\"Sw1\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036190838445"}], "22969", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", \
+"\<\"XXX\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6185065596409807`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"selectTrials", "[", "trialTimes_", "]"}], ":=", 
+  RowBox[{"Select", "[", 
+   RowBox[{"eventsAll", ",", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"trialTimes", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "-", "5000000"}], ")"}], "<", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], "&&", " ", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "<", 
+        RowBox[{"trialTimes", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], " ", "&&", " ", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "<", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"trialTimes", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "+", "30000000"}], ")"}]}]}], 
+      ")"}], "&"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6185064201220007`*^9, 3.618506540094863*^9}, {
+   3.6185065710076313`*^9, 3.618506763695652*^9}, {3.6185068579190416`*^9, 
+   3.6185068662785196`*^9}, {3.6185072573658886`*^9, 
+   3.6185072913138304`*^9}, {3.6185074316598577`*^9, 3.6185074318178663`*^9}, 
+   3.618507504797041*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"trialsCoulb", "=", 
+   RowBox[{"selectTrials", "/@", " ", 
+    RowBox[{"Partition", "[", 
+     RowBox[{
+      RowBox[{"Append", "[", 
+       RowBox[{"trialStartTimes", ",", "Infinity"}], "]"}], ",", "2", ",", 
+      "1"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Dimensions", "[", "trialsCoulb", "]"}]}], "Input",
+ CellChangeTimes->{{3.618506384704975*^9, 3.618506410752465*^9}, {
+   3.6185067729181795`*^9, 3.6185067894051228`*^9}, 3.618507320396494*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "101", "}"}]], "Output",
+ CellChangeTimes->{3.618506789852148*^9, 3.618506867926614*^9, 
+  3.618507322114592*^9, 3.618507433248948*^9, 3.61850750600311*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"trialsCoulb", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], " ", "//", "TableForm"}]], "Input",
+ CellChangeTimes->{3.6185069481902046`*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036208297913"}], "16718", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", \
+"\<\"XXX\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036208278538"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036204272757"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", \
+"\<\"Sw2\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372036203822445"}], "0", 
+     "306", "\<\"Added to troubleshoot jump registration in early script. \
+\"\>", "\<\"Sw1\"\>"},
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372036190838445"}], "22969", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", \
+"\<\"XXX\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.6185069485202236`*^9, 3.6185073232616577`*^9, 
+  3.618507433656972*^9, 3.6185075063891315`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"trialsCoulb", "[", 
+   RowBox[{"[", 
+    RowBox[{"-", "1"}], "]"}], "]"}], " ", "//", "TableForm"}]], "Input",
+ CellChangeTimes->{{3.6185068028178897`*^9, 3.6185068333186345`*^9}, {
+  3.618506879311265*^9, 3.618506897109283*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Stimulus\"\>", 
+     RowBox[{"-", "9223372034150142538"}], "12843", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", \
+"\<\"XXX\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034150127163"}], "0", 
+     "4", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034146123288"}], "0", 
+     "6", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034145717257"}], "0", 
+     "7", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0007).\"\>", \
+"\<\"Sw1\"\>"},
+    {"\<\"Coulbourn\"\>", 
+     RowBox[{"-", "9223372034145717163"}], "50327687", 
+     "1", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", \
+"\<\"Sw1\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.6185068135115013`*^9, 3.6185068340086737`*^9}, {
+   3.6185068692406893`*^9, 3.618506897550308*^9}, 3.618507324340719*^9, {
+   3.618507468386958*^9, 3.618507506974165*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plot Trial Graph", "Section",
+ CellChangeTimes->{{3.6179627617322073`*^9, 3.6179627839954805`*^9}, {
+  3.6179641821074476`*^9, 3.617964187362748*^9}, {3.61806384309173*^9, 
+  3.6180638462519107`*^9}, {3.618063896090761*^9, 3.618063899235941*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"trialsCoulb", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Stimulus\"\>", ",", 
+     RowBox[{"-", "9223372036208297913"}], ",", "16718", ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", 
+     ",", "\<\"XXX\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", 
+     RowBox[{"-", "9223372036208278538"}], ",", "0", ",", "4", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", 
+     ",", "\<\"Sw2\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", 
+     RowBox[{"-", "9223372036204272757"}], ",", "0", ",", "6", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", 
+     ",", "\<\"Sw2\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", 
+     RowBox[{"-", "9223372036203822445"}], ",", "0", ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", 
+     ",", "\<\"Sw1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", 
+     RowBox[{"-", "9223372036203822445"}], ",", "0", ",", "306", 
+     ",", "\<\"Added to troubleshoot jump registration in early script. \"\>",
+      ",", "\<\"Sw1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Stimulus\"\>", ",", 
+     RowBox[{"-", "9223372036190838445"}], ",", "22969", ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", 
+     ",", "\<\"XXX\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6185078055842447`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempEntry", "=", 
+  RowBox[{
+   RowBox[{"SelectFirst", "[", 
+    RowBox[{
+     RowBox[{"trialsCoulb", "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"4", ",", "7", ",", "10"}], "}"}], ",", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "4", "]"}], "]"}]}], "]"}], "&"}]}], "]"}], "[", 
+   RowBox[{"[", "2", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.618507763647846*^9, 3.618507771655304*^9}, {
+  3.6185078982395444`*^9, 3.618507900293662*^9}, {3.6185080031595454`*^9, 
+  3.61850801565526*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "9223372036208278538"}]], "Output",
+ CellChangeTimes->{
+  3.6185077726633615`*^9, 3.6185079007026854`*^9, {3.618508006632744*^9, 
+   3.618508016084285*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", "tempEntry", "]"}]], "Input",
+ NumberMarks->False],
+
+Cell[BoxData["9223372036208278538"], "Output",
+ CellChangeTimes->{3.618557266927272*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempTrial", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ReplacePart", "[", 
+     RowBox[{"#", ",", " ", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"2", "\[Rule]", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "-", "tempEntry"}], ")"}], "/", 
+          "1000000."}]}], ",", 
+        RowBox[{"3", "\[Rule]", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "3", "]"}], "]"}], "/", "1000000."}]}]}], " ", 
+       "}"}]}], "]"}], "&"}], " ", "/@", " ", 
+   RowBox[{"trialsCoulb", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.618508039933649*^9, 3.6185080672452106`*^9}, {
+  3.618554699195406*^9, 3.6185547146912923`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Stimulus\"\>", ",", 
+     RowBox[{"-", "0.019375`"}], ",", "0.016718`", ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", 
+     ",", "\<\"XXX\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", "0.`", ",", "0.`", ",", "4", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", 
+     ",", "\<\"Sw2\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", "4.005781`", ",", "0.`", ",", "6", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0006).\"\>", 
+     ",", "\<\"Sw2\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", "4.456093`", ",", "0.`", ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0001).\"\>", 
+     ",", "\<\"Sw1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Coulbourn\"\>", ",", "4.456093`", ",", "0.`", ",", "306", 
+     ",", "\<\"Added to troubleshoot jump registration in early script. \"\>",
+      ",", "\<\"Sw1\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Stimulus\"\>", ",", "17.440093`", ",", "0.022969`", ",", "1",
+      ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>",
+      ",", "\<\"XXX\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.6185080411627192`*^9, 3.618508067650234*^9}, 
+   3.6185547393077*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tempTrialStim", "=", 
+  RowBox[{"Select", "[", 
+   RowBox[{"tempTrial", ",", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "===", "\"\<Stimulus\>\""}], "&"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{3.6185543475182915`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Stimulus\"\>", ",", 
+     RowBox[{"-", "0.019375`"}], ",", "0.016718`", ",", "1", 
+     ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>", 
+     ",", "\<\"XXX\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"Stimulus\"\>", ",", "17.440093`", ",", "0.022969`", ",", "1",
+      ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value (0x0001).\"\>",
+      ",", "\<\"XXX\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.61855434837534*^9, 3.6185547458350735`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ppPlotCoulbournElement", "[", 
+  RowBox[{
+   RowBox[{"tempTrial", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", "Pink"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6185547548925915`*^9, 3.618554787923481*^9}, {
+   3.6185576966398497`*^9, 3.6185576988859787`*^9}, 3.61855781937387*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 0.5, 0.5], 
+   RectangleBox[{-1, -0.019375}, {1, -0.0026569999999999996`}]}]], "Output",
+ CellChangeTimes->{{3.618554782561174*^9, 3.618554788189496*^9}, {
+  3.6185565221596737`*^9, 3.6185565540915003`*^9}, {3.6185577002580566`*^9, 
+  3.6185577279356403`*^9}, {3.6185578198979*^9, 3.6185578720058804`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ppPlotCoulbournElement", "[", 
+  RowBox[{
+   RowBox[{"tempTrial", "[", 
+    RowBox[{"[", "2", "]"}], "]"}], ",", "Black"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6185547548925915`*^9, 3.618554787923481*^9}, {
+   3.6185576966398497`*^9, 3.6185576988859787`*^9}, {3.6185577306847973`*^9, 
+   3.6185577379662137`*^9}, 3.6185578153576403`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {GrayLevel[0], LineBox[{{0., -1}, {0., 1}}]}]], "Output",
+ CellChangeTimes->{
+  3.6185577381772256`*^9, 3.6185578161176834`*^9, {3.6185578481975183`*^9, 
+   3.6185578701657753`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ppCoulbournTrialType", "[", "tempTrial", "]"}]], "Input",
+ CellChangeTimes->{{3.618557490106037*^9, 3.6185574919991455`*^9}}],
+
+Cell[BoxData["\<\"GO\"\>"], "Output",
+ CellChangeTimes->{3.6185573128498983`*^9, 3.618557492216158*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FirstCase", "[", 
+  RowBox[{"tempTrial", ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<Coulbourn\>\"", ",", "_", ",", "_", ",", 
+     RowBox[{"x_", "/;", 
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"4", ",", "7", ",", "10"}], "}"}], ",", "x"}], "]"}]}], ",", 
+     "___"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.618557270410471*^9, 3.618557277280864*^9}, {
+  3.6185573187602367`*^9, 3.618557350800069*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Coulbourn\"\>", ",", "0.`", ",", "0.`", ",", "4", 
+   ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 1 value (0x0004).\"\>", 
+   ",", "\<\"Sw2\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.6185572775538797`*^9, 3.6185573208593564`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"FirstCase", "[", 
+    RowBox[{"tempTrial", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Coulbourn\>\"", ",", "_", ",", "_", ",", 
+       RowBox[{"x_", "/;", 
+        RowBox[{"MemberQ", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"4", ",", "7", ",", "10"}], "}"}], "+", "10"}], ",", 
+          "x"}], "]"}]}], ",", "___"}], "}"}]}], "]"}], "[", 
+   RowBox[{"[", "0", "]"}], "]"}], "===", "Missing"}]], "Input",
+ CellChangeTimes->{{3.618557270410471*^9, 3.618557277280864*^9}, {
+  3.6185573187602367`*^9, 3.618557370592201*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.618557370967222*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ppCoulbournTrialType", "[", "trial_List", "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "tempStim", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"tempStim", "=", 
+       RowBox[{"FirstCase", "[", 
+        RowBox[{"trial", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Coulbourn\>\"", ",", "_", ",", "_", ",", 
+           RowBox[{"x_", "/;", 
+            RowBox[{"MemberQ", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"4", ",", "7", ",", "10"}], "}"}], ",", "x"}], "]"}]}],
+            ",", "___"}], "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"tempStim", "[", 
+          RowBox[{"[", "0", "]"}], "]"}], "===", "Missing"}], ",", "  ", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"ppCoulbournTrialType", "::", "noTrialTrigger"}], ",", " ",
+            "trial"}], "]"}], ";", " ", "Null"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Switch", "[", 
+         RowBox[{
+          RowBox[{"tempStim", "[", 
+           RowBox[{"[", "4", "]"}], "]"}], ",", "4", ",", "\"\<GO\>\"", ",", 
+          " ", "7", ",", "\"\<NOGO\>\"", ",", " ", "10", ",", 
+          "\"\<TEST\>\""}], "]"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ppCoulbournTrialType", "::", "noTrialTrigger"}], "=", 
+   "\"\<Input `1` does not contain a trial trigger!\>\""}], ";"}]}], "Input",
+ CellChangeTimes->{{3.618556821011767*^9, 3.6185571300074406`*^9}, {
+  3.61855721165211*^9, 3.6185572536145105`*^9}, {3.6185573316419735`*^9, 
+  3.618557344940734*^9}, {3.6185573751494617`*^9, 3.618557472352021*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ppPlotCoulbournElement", "[", 
+    RowBox[{"trialElement_List", ",", " ", 
+     RowBox[{"color_", "/;", 
+      RowBox[{"ColorQ", "[", "color", "]"}]}]}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"color", ",", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"trialElement", "[", 
+          RowBox[{"[", "3", "]"}], "]"}], "\[Equal]", "0"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"trialElement", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", 
+             RowBox[{"-", "1"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"trialElement", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], ",", "1"}], "}"}]}], "}"}], 
+         "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"Rectangle", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"trialElement", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{
+             RowBox[{"trialElement", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "+", 
+             RowBox[{"trialElement", "[", 
+              RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}]}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.618557613366087*^9, 3.6185576901114764`*^9}, {
+  3.618557721480271*^9, 3.61855780784521*^9}, {3.6185578428302116`*^9, 
+  3.6185578666615744`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ppPlotCoulbournStimulus", "[", "trial_List", "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "tempTrialStim", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tempTrialStim", "=", 
+      RowBox[{"Select", "[", 
+       RowBox[{"tempTrial", ",", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "1", "]"}], "]"}], "===", "\"\<Stimulus\>\""}], 
+         "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Graphics", "[", 
+      RowBox[{"{", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Switch", "[", 
+         RowBox[{
+          RowBox[{"ppCoulbournTrialType", "[", "trial", "]"}], ",", 
+          RowBox[{"\"\<GO\>\"", 
+           RowBox[{"Opacity", "[", 
+            RowBox[{"0.25", ",", " ", 
+             RowBox[{
+              RowBox[{"ColorData", "[", "\"\<HTML\>\"", "]"}], "[", 
+              "\"\<DarkOliveGreen\>\"", "]"}]}], "]"}]}], ",", 
+          RowBox[{"Opacity", "[", 
+           RowBox[{"0.25", ",", 
+            RowBox[{
+             RowBox[{"ColorData", "[", "\"\<HTML\>\"", "]"}], "[", 
+             "\"\<DarkRed\>\"", "]"}]}], "]"}]}], "]"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Rectangle", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", 
+            RowBox[{"trial", "[", 
+             RowBox[{"[", "2", "]"}], "]"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", 
+            RowBox[{
+             RowBox[{"trial", "[", 
+              RowBox[{"[", "2", "]"}], "]"}], "+", 
+             RowBox[{"trial", "[", 
+              RowBox[{"[", "3", "]"}], "]"}]}]}], "}"}]}], "]"}]}], "}"}], 
+      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.61855437774402*^9, 3.618554471958409*^9}, {
+  3.618554540277316*^9, 3.6185546888618145`*^9}, {3.618554750459338*^9, 
+  3.6185547513953915`*^9}, {3.618554804973456*^9, 3.6185548137629585`*^9}, {
+  3.618556516008322*^9, 3.618556550912318*^9}, {3.618556750687744*^9, 
+  3.618556776205204*^9}, {3.618557137778885*^9, 3.6185571939790993`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ppPlotCoulbournTrial", "[", "trial_List", "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "tempEntry", ",", "tempTrial", ",", " ", "tempStimulus", ",", 
+      "tempTrialType"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"tempEntry", "=", 
+      RowBox[{
+       RowBox[{"SelectFirst", "[", 
+        RowBox[{"trial", ",", 
+         RowBox[{
+          RowBox[{"MemberQ", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"4", ",", "7", ",", "10"}], "}"}], ",", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "4", "]"}], "]"}]}], "]"}], "&"}]}], "]"}], "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tempTrial", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ReplacePart", "[", 
+         RowBox[{"#", ",", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"2", "\[Rule]", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"#", "[", 
+                 RowBox[{"[", "2", "]"}], "]"}], "-", "tempEntry"}], ")"}], 
+              "/", "1000000."}]}], ",", 
+            RowBox[{"3", "\[Rule]", 
+             RowBox[{
+              RowBox[{"#", "[", 
+               RowBox[{"[", "3", "]"}], "]"}], "/", "1000000."}]}]}], " ", 
+           "}"}]}], "]"}], "&"}], " ", "/@", " ", "trial"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tempTrialType", "=", 
+      RowBox[{"ppCoulbournTrialType", "[", "tempTrial", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"tempStimulus", "=", 
+      RowBox[{"FirstCase", "[", 
+       RowBox[{"tempTrial", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Stimulus\>\"", ",", "___"}], "}"}]}], "]"}]}], ";", " ", 
+     RowBox[{"tempTrial", "=", " ", 
+      RowBox[{"Cases", "[", 
+       RowBox[{"tempTrial", ",", " ", 
+        RowBox[{"Except", "[", "tempStimulus", "]"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{"tempJumpEscape", "=", "\[IndentingNewLine]", 
+       RowBox[{"tempJumpEntry", "=", "\[IndentingNewLine]", 
+        RowBox[{"tempJumpRandom", "="}]}]}], "*)"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Show", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Axes", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"True", ",", "None"}], "}"}]}], ",", 
+         RowBox[{"AxesOrigin", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}]}], ",", "\[IndentingNewLine]", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "5"}], ",", "30"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "1.1"}], ",", "1"}], "}"}]}], "}"}]}]}], "]"}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"ppPlotCoulbournElement", "[", 
+        RowBox[{"tempStimulus", ",", 
+         RowBox[{"Switch", "[", 
+          RowBox[{"tempTrialType", ",", "\"\<GO\>\"", ",", 
+           RowBox[{"Opacity", "[", 
+            RowBox[{"0.25", ",", " ", 
+             RowBox[{
+              RowBox[{"ColorData", "[", "\"\<HTML\>\"", "]"}], "[", 
+              "\"\<DarkOliveGreen\>\"", "]"}]}], "]"}], ",", "\"\<NOGO\>\"", 
+           ",", 
+           RowBox[{"Opacity", "[", 
+            RowBox[{"0.25", ",", 
+             RowBox[{
+              RowBox[{"ColorData", "[", "\"\<HTML\>\"", "]"}], "[", 
+              "\"\<DarkRed\>\"", "]"}]}], "]"}], ",", "\"\<TEST\>\"", ",", 
+           RowBox[{"Opacity", "[", 
+            RowBox[{"0.25", ",", "Black"}], "]"}]}], "]"}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.618507509837329*^9, 3.61850769920016*^9}, {
+   3.618507729553896*^9, 3.618507758736565*^9}, {3.6185079166475973`*^9, 
+   3.618508027204921*^9}, {3.61850807544868*^9, 3.618508246990492*^9}, {
+   3.6185542909170537`*^9, 3.618554340057864*^9}, 3.6185543732307615`*^9, {
+   3.618554403831512*^9, 3.618554409285824*^9}, 3.618554725676921*^9, {
+   3.6185565676892776`*^9, 3.6185567374309864`*^9}, {3.618557180405323*^9, 
+   3.6185571868636923`*^9}, {3.618557893427106*^9, 3.618557902919648*^9}, {
+   3.6185579882535295`*^9, 3.618558198451552*^9}, {3.61855825104456*^9, 
+   3.618558335825409*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["s"], "Input",
+ CellChangeTimes->{{3.618558356347583*^9, 3.618558359873785*^9}, {
+   3.6185583910735693`*^9, 3.618558391682604*^9}, 3.6185726205484486`*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.6185583604998207`*^9, 3.6185583919856215`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ppPlotCoulbournTrial", "[", 
+  RowBox[{"trialsCoulb", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6185075666175766`*^9, 3.6185075772801867`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Show", "::", "gcomb"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Could not combine the graphics objects in \
+\[NoBreak]\\!\\(Show[\\(\\(\\*GraphicsBox[List[], Rule[Axes, List[True, \
+None]], Rule[AxesOrigin, List[0, 0]], Rule[PlotRange, List[List[-5, 30], \
+List[-1.1`, 1]]]], \
+\\(\\(ppPlotCoulbournElement[\\(\\(\\(\\({\\\"Stimulus\\\", \
+\\(\\(-0.019375`\\)\\), 0.016718`, 1, \\\"TTL Input on AcqSystem1_0 board 0 \
+port 0 value (0x0001).\\\", \\\"XXX\\\"}\\)\\), \\(\\(Opacity[\\(\\(0.25`, \
+\\*InterpretationBox[ButtonBox[TooltipBox[\\(\\*GraphicsBox[List[List[\
+GrayLevel[0], RectangleBox[List[0, 0]]], List[GrayLevel[0], \
+RectangleBox[List[1, -1]]], List[RGBColor[0.3333333333333333`, \
+0.4196078431372549`, 0.1843137254901961`], RectangleBox[List[0, -1], List[2, \
+1]]]], Rule[AspectRatio, 1], Rule[Frame, True], Rule[FrameStyle, \
+RGBColor[0.2222222222222222`, 0.2797385620915033`, 0.12287581699346406`]], \
+Rule[FrameTicks, None], Rule[PlotRangePadding, None], Rule[ImageSize, \
+Dynamic[List[Automatic, Times[1.35`, CurrentValue[\\\"FontCapHeight\\\"], \
+Power[AbsoluteCurrentValue[Magnification], -1]]]]]] \[InvisibleSpace]\\), \
+\\\"RGBColor[0.3333333333333333, 0.4196078431372549, \
+0.1843137254901961]\\\"], Rule[Appearance, None], Rule[BaseStyle, List[]], \
+Rule[BaselinePosition, Baseline], Rule[DefaultBaseStyle, List[]], \
+RuleDelayed[ButtonFunction, With[List[Set[Typeset`box$, EvaluationBox[]]], \
+If[Not[AbsoluteCurrentValue[\\\"Deployed\\\"]], \
+CompoundExpression[SelectionMove[Typeset`box$, All, Expression], \
+Set[FrontEnd`Private`$ColorSelectorInitialAlpha, 1], \
+Set[FrontEnd`Private`$ColorSelectorInitialColor, \
+RGBColor[0.3333333333333333`, 0.4196078431372549`, 0.1843137254901961`]], \
+Set[FrontEnd`Private`$ColorSelectorUseMakeBoxes, True], \
+MathLink`CallFrontEnd[FrontEnd`AttachCell[Typeset`box$, \
+FrontEndResource[\\\"RGBColorValueSelector\\\"], List[0, List[Left, Bottom]], \
+List[Left, Top], Rule[\\\"ClosingActions\\\", \
+List[\\\"SelectionDeparture\\\", \\\"ParentChanged\\\", \
+\\\"EvaluatorQuit\\\"]]]]]]]], Rule[BaseStyle, Inherited], Rule[Evaluator, \
+Automatic], Rule[Method, \\\"Preemptive\\\"]], RGBColor[0.3333333333333333`, \
+0.4196078431372549`, 0.1843137254901961`], Rule[Editable, False], \
+Rule[Selectable, False]]\\)\\)]\\)\\)\\)\\)]\\)\\)\\)\\)]\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Show/gcomb\\\", \
+ButtonNote -> \\\"Show::gcomb\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.618558329225032*^9, 3.618558337109483*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   GraphicsBox[{},
+    Axes->{True, None},
+    AxesOrigin->{0, 0},
+    PlotRange->{{-5, 30}, {-1.1, 1}}], ",", 
+   RowBox[{"ppPlotCoulbournElement", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"Stimulus\"\>", ",", 
+       RowBox[{"-", "0.019375`"}], ",", "0.016718`", ",", "1", 
+       ",", "\<\"TTL Input on AcqSystem1_0 board 0 port 0 value \
+(0x0001).\"\>", ",", "\<\"XXX\"\>"}], "}"}], ",", 
+     RowBox[{"Opacity", "[", 
+      RowBox[{"0.25`", ",", 
+       InterpretationBox[
+        ButtonBox[
+         TooltipBox[
+          RowBox[{
+           GraphicsBox[{
+             {GrayLevel[0], RectangleBox[{0, 0}]}, 
+             {GrayLevel[0], RectangleBox[{1, -1}]}, 
+             {RGBColor[
+              0.3333333333333333, 0.4196078431372549, 0.1843137254901961], 
+              RectangleBox[{0, -1}, {2, 1}]}},
+            AspectRatio->1,
+            Frame->True,
+            
+            FrameStyle->RGBColor[
+             0.2222222222222222, 0.2797385620915033, 0.12287581699346406`],
+            FrameTicks->None,
+            
+            ImageSize->
+             Dynamic[{
+              Automatic, 1.35 CurrentValue["FontCapHeight"]/
+               AbsoluteCurrentValue[Magnification]}],
+            PlotRangePadding->None], "\[InvisibleSpace]"}],
+          
+          "RGBColor[0.3333333333333333, 0.4196078431372549, \
+0.1843137254901961]"],
+         Appearance->None,
+         BaseStyle->{},
+         BaselinePosition->Baseline,
+         ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+           If[
+            Not[
+             AbsoluteCurrentValue["Deployed"]], 
+            SelectionMove[Typeset`box$, All, Expression]; 
+            FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+            FrontEnd`Private`$ColorSelectorInitialColor = 
+             RGBColor[
+              0.3333333333333333, 0.4196078431372549, 0.1843137254901961]; 
+            FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+            MathLink`CallFrontEnd[
+              FrontEnd`AttachCell[Typeset`box$, 
+               FrontEndResource["RGBColorValueSelector"], {
+               0, {Left, Bottom}}, {Left, Top}, 
+               "ClosingActions" -> {
+                "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+         DefaultBaseStyle->{},
+         Evaluator->Automatic,
+         Method->"Preemptive"],
+        RGBColor[0.3333333333333333, 0.4196078431372549, 0.1843137254901961],
+        Editable->False,
+        Selectable->False]}], "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.618507577573203*^9, 3.61850759238605*^9}, {
+   3.6185081149869413`*^9, 3.618508126690611*^9}, 3.618508171537176*^9, {
+   3.618508214136613*^9, 3.618508248200561*^9}, {3.6185583292570333`*^9, 
+   3.6185583371224833`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Import Video and Align", "Section",
+ CellChangeTimes->{{3.6179627617322073`*^9, 3.6179627839954805`*^9}, {
+  3.6179641821074476`*^9, 3.617964187362748*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1912, 1034},
+WindowMargins->{{-4, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (July 1, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 163, 2, 90, "Title"],
+Cell[CellGroupData[{
+Cell[768, 28, 101, 1, 64, "Chapter"],
+Cell[872, 31, 118, 2, 31, "Input"],
+Cell[993, 35, 587, 20, 91, "Text"],
+Cell[1583, 57, 593, 20, 91, "Text"],
+Cell[2179, 79, 167, 2, 23, "Print"],
+Cell[2349, 83, 424, 11, 72, "Input"],
+Cell[CellGroupData[{
+Cell[2798, 98, 415, 9, 31, "Input"],
+Cell[3216, 109, 342, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3595, 118, 442, 10, 31, "Input"],
+Cell[4040, 130, 319, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4396, 139, 102, 1, 63, "Section"],
+Cell[CellGroupData[{
+Cell[4523, 144, 200, 4, 31, "Input"],
+Cell[4726, 150, 432, 10, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5195, 165, 267, 7, 31, "Input"],
+Cell[5465, 174, 327, 9, 31, "Output"]
+}, Open  ]],
+Cell[5807, 186, 268, 7, 31, "Input"],
+Cell[CellGroupData[{
+Cell[6100, 197, 740, 20, 31, "Input"],
+Cell[6843, 219, 872, 22, 42, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7752, 246, 754, 20, 31, "Input"],
+Cell[8509, 268, 16398, 316, 1512, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24944, 589, 758, 20, 31, "Input"],
+Cell[25705, 611, 73888, 1427, 7001, "Output"]
+}, Open  ]],
+Cell[99608, 2041, 585, 14, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100230, 2060, 244, 5, 97, "Section"],
+Cell[CellGroupData[{
+Cell[100499, 2069, 275, 7, 31, "Input"],
+Cell[100777, 2078, 3001, 57, 176, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103815, 2140, 141, 2, 31, "Input"],
+Cell[103959, 2144, 1065, 17, 31, "Output"]
+}, Open  ]],
+Cell[105039, 2164, 385, 8, 49, "Text"],
+Cell[105427, 2174, 9546, 161, 61, "Input"],
+Cell[114976, 2337, 457, 7, 31, "Input"],
+Cell[115436, 2346, 3457, 70, 232, "Input"],
+Cell[CellGroupData[{
+Cell[118918, 2420, 73, 1, 31, "Input"],
+Cell[118994, 2423, 560, 10, 31, "Output"]
+}, Open  ]],
+Cell[119569, 2436, 3213, 65, 212, "Input"],
+Cell[CellGroupData[{
+Cell[122807, 2505, 73, 1, 31, "Input"],
+Cell[122883, 2508, 616, 10, 31, "Output"]
+}, Open  ]],
+Cell[123514, 2521, 3451, 68, 172, "Input"],
+Cell[CellGroupData[{
+Cell[126990, 2593, 73, 1, 31, "Input"],
+Cell[127066, 2596, 1157, 18, 31, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[128272, 2620, 333, 4, 63, "Section"],
+Cell[128608, 2626, 4807, 94, 192, "Input"],
+Cell[CellGroupData[{
+Cell[133440, 2724, 388, 8, 52, "Input"],
+Cell[133831, 2734, 1045, 16, 31, "Output"]
+}, Open  ]],
+Cell[134891, 2753, 4534, 102, 452, "Input"],
+Cell[139428, 2857, 1334, 31, 52, "Input"],
+Cell[140765, 2890, 228, 5, 31, "Input"],
+Cell[140996, 2897, 608, 15, 31, "Input"],
+Cell[CellGroupData[{
+Cell[141629, 2916, 215, 5, 31, "Input"],
+Cell[141847, 2923, 2346, 56, 176, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[144242, 2985, 210, 3, 63, "Section"],
+Cell[144455, 2990, 722, 18, 31, "Input"],
+Cell[145180, 3010, 685, 20, 31, "Input"],
+Cell[CellGroupData[{
+Cell[145890, 3034, 213, 5, 31, "Input"],
+Cell[146106, 3041, 2232, 54, 176, "Output"]
+}, Open  ]],
+Cell[148353, 3098, 1209, 32, 31, "Input"],
+Cell[CellGroupData[{
+Cell[149587, 3134, 503, 11, 52, "Input"],
+Cell[150093, 3147, 184, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[150314, 3155, 169, 4, 31, "Input"],
+Cell[150486, 3161, 1660, 40, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[152183, 3206, 264, 6, 31, "Input"],
+Cell[152450, 3214, 1566, 37, 101, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[154065, 3257, 252, 3, 63, "Section"],
+Cell[CellGroupData[{
+Cell[154342, 3264, 87, 2, 31, "Input"],
+Cell[154432, 3268, 1540, 33, 72, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[156009, 3306, 629, 17, 31, "Input"],
+Cell[156641, 3325, 184, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[156862, 3334, 85, 2, 31, "Input"],
+Cell[156950, 3338, 88, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[157075, 3344, 798, 23, 31, "Input"],
+Cell[157876, 3369, 1434, 29, 72, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[159347, 3403, 302, 9, 31, "Input"],
+Cell[159652, 3414, 570, 12, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[160259, 3431, 306, 6, 31, "Input"],
+Cell[160568, 3439, 349, 6, 34, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[160954, 3450, 364, 7, 31, "Input"],
+Cell[161321, 3459, 212, 5, 374, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[161570, 3469, 149, 2, 31, "Input"],
+Cell[161722, 3473, 103, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[161862, 3479, 477, 12, 31, "Input"],
+Cell[162342, 3493, 282, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[162661, 3503, 616, 16, 31, "Input"],
+Cell[163280, 3521, 73, 1, 31, "Output"]
+}, Open  ]],
+Cell[163368, 3525, 1883, 44, 192, "Input"],
+Cell[165254, 3571, 1840, 48, 192, "Input"],
+Cell[167097, 3621, 2214, 54, 172, "Input"],
+Cell[169314, 3677, 4601, 110, 392, "Input"],
+Cell[CellGroupData[{
+Cell[173940, 3791, 169, 2, 31, "Input"],
+Cell[174112, 3795, 100, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[174249, 3801, 205, 4, 31, "Input"],
+Cell[174457, 3807, 2648, 42, 30, "Message"],
+Cell[177108, 3851, 2804, 69, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[179939, 3924, 162, 2, 63, "Section"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
