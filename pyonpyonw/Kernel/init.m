@@ -10,3 +10,4 @@ Needs["ParaparaW`"];
 
 Get[ "PyonpyonW`PyonpyonW`"];
 Get[ "PyonpyonW`Colbourn`"];
+Get[ "PyonpyonW`Parsing`"];
