@@ -1,0 +1,568 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     21070,        559]
+NotebookOptionsPosition[     18938,        481]
+NotebookOutlinePosition[     19437,        502]
+CellTagsIndexPosition[     19352,        497]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Testing Gonzalo' s Parsing 150528", "Title",
+ CellChangeTimes->{{3.641811184813735*^9, 3.6418112009606586`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"<<", "PyonpyonW`"}]], "Input",
+ CellChangeTimes->{{3.641808262917612*^9, 3.64180826707985*^9}}],
+
+Cell[TextData[{
+ StyleBox["HokahokaW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 11 May 2015 20:18:03 is \
+dfc276416b3fda60a30e53692c8c82eaed59709c.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.641813191627518*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[TextData[{
+ StyleBox["NounouW`",
+  StripOnInput->False,
+  FontFamily->"Helvetica",
+  FontWeight->"Bold",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["Git HEAD hash loaded on Mon 6 Apr 2015 19:49:18 is \
+a7b569f93d24f934eedde6a6ac130f15f8bd31fe.\nRemember that this is at latest \
+the penultimate commit before deployment. You should use a live git repo if \
+possible, for better version tracking.",
+  StripOnInput->False,
+  FontFamily->"Courier",
+  FontSize->Small]
+}], "Text",
+ GeneratedCell->True,
+ CellAutoOverwrite->True,
+ CellChangeTimes->{3.641813191872532*^9},
+ Background->GrayLevel[0.85]],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Get", "::", "noopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Cannot open \[NoBreak]\\!\\(\\\"HokahokaW`Package`\\\"\\)\
+\[NoBreak]. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/noopen\\\", ButtonNote -> \
+\\\"Get::noopen\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6418082680059032`*^9, 3.641808360630201*^9, 
+  3.6418084724685974`*^9, 3.6418086961933937`*^9, 3.641808888022366*^9, 
+  3.6418089983316755`*^9, 3.641811096066659*^9, 3.641811471067108*^9, 
+  3.6418117196493263`*^9, 3.641813192307557*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Needs", "::", "nocont"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Context \[NoBreak]\\!\\(\\\"HokahokaW`Package`\\\"\\)\
+\[NoBreak] was not created when Needs was evaluated. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Needs/nocont\\\", ButtonNote -> \
+\\\"Needs::nocont\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6418082680059032`*^9, 3.641808360630201*^9, 
+  3.6418084724685974`*^9, 3.6418086961933937`*^9, 3.641808888022366*^9, 
+  3.6418089983316755`*^9, 3.641811096066659*^9, 3.641811471067108*^9, 
+  3.6418117196493263`*^9, 3.6418131923345585`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Import", "::", "nffil"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"File not found during \[NoBreak]\\!\\(Import\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Import/nffil\\\", \
+ButtonNote -> \\\"Import::nffil\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6418082680059032`*^9, 3.641808360630201*^9, 
+  3.6418084724685974`*^9, 3.6418086961933937`*^9, 3.641808888022366*^9, 
+  3.6418089983316755`*^9, 3.641811096066659*^9, 3.641811471067108*^9, 
+  3.6418117196493263`*^9, 3.641813192620575*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"HHPackageMessage", "::", "noPreFileFound"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Pre-generated GitHEAD.m file was not found, package may be \
+corrupt. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\
+\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:HokahokaW/ref/HHPackageMessage\\\", ButtonNote -> \
+\\\"HokahokaW`HHPackageMessage::noPreFileFound\\\"]\\)\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.6418082680059032`*^9, 3.641808360630201*^9, 
+  3.6418084724685974`*^9, 3.6418086961933937`*^9, 3.641808888022366*^9, 
+  3.6418089983316755`*^9, 3.641811096066659*^9, 3.641811471067108*^9, 
+  3.6418117196493263`*^9, 3.641813192763583*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Import", "::", "nffil"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"File not found during \[NoBreak]\\!\\(Import\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Import/nffil\\\", \
+ButtonNote -> \\\"Import::nffil\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.6418082680059032`*^9, 3.641808360630201*^9, 
+  3.6418084724685974`*^9, 3.6418086961933937`*^9, 3.641808888022366*^9, 
+  3.6418089983316755`*^9, 3.641811096066659*^9, 3.641811471067108*^9, 
+  3.6418117196493263`*^9, 3.6418131929595947`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"HHPackageMessage", "::", "noPreFileFound"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Pre-generated GitHEAD.m file was not found, package may be \
+corrupt. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\
+\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:HokahokaW/ref/HHPackageMessage\\\", ButtonNote -> \
+\\\"HokahokaW`HHPackageMessage::noPreFileFound\\\"]\\)\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{3.6418082680059032`*^9, 3.641808360630201*^9, 
+  3.6418084724685974`*^9, 3.6418086961933937`*^9, 3.641808888022366*^9, 
+  3.6418089983316755`*^9, 3.641811096066659*^9, 3.641811471067108*^9, 
+  3.6418117196493263`*^9, 3.6418131931026025`*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Load Test Data", "Section",
+ CellChangeTimes->{{3.6418112464292593`*^9, 3.641811257550895*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"testFileName", "=", 
+  RowBox[{
+   RowBox[{"ParentDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "<>", 
+   "\"\<\\\\_resources\\\\tDC004_150313_120455.pp2rl.tsv\>\""}]}]], "Input",
+ CellChangeTimes->{{3.6361078855521955`*^9, 3.6361078889193883`*^9}, 
+   3.6361083513338366`*^9, {3.6361085061536922`*^9, 3.63610853864055*^9}, {
+   3.6361085809999733`*^9, 3.6361086052933626`*^9}}],
+
+Cell[BoxData["\<\"C:\\\\git\\\\pyonpyon\\\\pyonpyonw\\\\Tests\\\\_resources\\\
+\\tDC004_150313_120455.pp2rl.tsv\"\>"], "Output",
+ CellChangeTimes->{{3.636108512879077*^9, 3.6361085413367043`*^9}, {
+   3.636108584043147*^9, 3.636108605681385*^9}, 3.636702021387649*^9, 
+   3.639115245846552*^9, 3.640352767078716*^9, 3.6404121481921215`*^9, 
+   3.64049531874586*^9, 3.640926371801671*^9, 3.641640984413824*^9, 
+   3.641706190920164*^9, 3.6417947727830205`*^9, 3.641811288259652*^9, 
+   3.6418114781595135`*^9, 3.6418117256416683`*^9, 3.6418132087024946`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"testData", "=", 
+   RowBox[{"Import", "[", "testFileName", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6361085889754295`*^9, 3.636108593207671*^9}, {
+   3.6361087007708235`*^9, 3.636108703145959*^9}, 3.6391152548710685`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tests", "Section",
+ CellChangeTimes->{{3.6418112517315626`*^9, 3.6418112543667135`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+PP2ExtractTrial
+ (This section should always be run, it extracts data for further tests)\
+\>", "Subsection",
+ CellChangeTimes->{
+  3.6418115086872597`*^9, {3.6418117345641785`*^9, 3.6418117492030163`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "PP2ExtractTrial"}]], "Input",
+ CellChangeTimes->{{3.641811102501027*^9, 3.641811104689152*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"This is how to use PP2ExtractTrial\"\>", "MSG"]], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.641813212169693*^9},
+ CellTags->"Info3641820412-2711134"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"trial3", "=", 
+    RowBox[{"PP2ExtractTrial", "[", 
+     RowBox[{"testData", ",", "3"}], "]"}]}], ")"}], " ", "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.636112695585314*^9, 3.636112752317559*^9}, {
+   3.636113142822894*^9, 3.6361131445249915`*^9}, {3.6361131981630597`*^9, 
+   3.6361132000511675`*^9}, 3.636114037344058*^9, {3.6403541394862127`*^9, 
+   3.640354141565332*^9}, {3.641811338667535*^9, 3.6418113401636205`*^9}, {
+   3.641811372916494*^9, 3.641811376794716*^9}, {3.6418114242594304`*^9, 
+   3.6418114275776205`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"STATE\"\>", "2", "237824", "3", "1", 
+     "2", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "292", "0", "0"},
+    {"\<\"TRIAL\"\>", "1", "1", "1", "600.`", "250.`", "4", "2000.`", 
+     "4000.`", "0.`", "0.`", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"STATE\"\>", "2", "237872", "48", "1", 
+     "3", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "308", "0", "0"},
+    {"\<\"STATE\"\>", "2", "242941", "69", "1", 
+     "4", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "324", "0", "0"},
+    {"\<\"STATE\"\>", "2", "243944", "3", "1", 
+     "5", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "342", "0", "0"},
+    {"\<\"STATE\"\>", "2", "245003", "3", "1", 
+     "5", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "338", "0", "0"},
+    {"\<\"STATE\"\>", "2", "245011", "8", "1", 
+     "6", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "354", "1062", "0"},
+    {"\<\"STATE\"\>", "2", "245015", "4", "1", 
+     "14", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "482", "1062", "0"},
+    {"\<\"STATE\"\>", "2", "245026", "11", "1", 
+     "14", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>",
+      "480", "1062", "0"},
+    {"\<\"STATE\"\>", "2", "249728", "3", "1", 
+     "14", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "484", "1062", "0"},
+    {"\<\"STATE\"\>", "2", "266035", "3", "1", 
+     "14", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>",
+      "480", "1062", "0"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+    "STATE", 2, 237824, 3, 1, 2, "FALSE", "TRUE", "FALSE", "FALSE", 292, 0, 
+     0}, {"TRIAL", 1, 1, 1, 600., 250., 4, 2000., 4000., 0., 0.}, {
+    "STATE", 2, 237872, 48, 1, 3, "FALSE", "TRUE", "FALSE", "FALSE", 308, 0, 
+     0}, {"STATE", 2, 242941, 69, 1, 4, "FALSE", "TRUE", "FALSE", "FALSE", 
+     324, 0, 0}, {
+    "STATE", 2, 243944, 3, 1, 5, "FALSE", "TRUE", "TRUE", "FALSE", 342, 0, 
+     0}, {"STATE", 2, 245003, 3, 1, 5, "FALSE", "FALSE", "TRUE", "FALSE", 338,
+      0, 0}, {"STATE", 2, 245011, 8, 1, 6, "FALSE", "FALSE", "TRUE", "FALSE", 
+     354, 1062, 0}, {
+    "STATE", 2, 245015, 4, 1, 14, "FALSE", "FALSE", "TRUE", "FALSE", 482, 
+     1062, 0}, {
+    "STATE", 2, 245026, 11, 1, 14, "FALSE", "FALSE", "FALSE", "FALSE", 480, 
+     1062, 0}, {
+    "STATE", 2, 249728, 3, 1, 14, "FALSE", "TRUE", "FALSE", "FALSE", 484, 
+     1062, 0}, {
+    "STATE", 2, 266035, 3, 1, 14, "FALSE", "FALSE", "FALSE", "FALSE", 480, 
+     1062, 0}}]]], "Output",
+ CellChangeTimes->{3.6418113843501477`*^9, 3.6418114302597733`*^9, 
+  3.641811493152371*^9, 3.64181173284208*^9, 3.6418132149678535`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{"trial4", "=", 
+    RowBox[{"PP2ExtractTrial", "[", 
+     RowBox[{"testData", ",", "4"}], "]"}]}], ")"}], " ", "//", 
+  "TableForm"}]], "Input",
+ CellChangeTimes->{{3.636112695585314*^9, 3.636112752317559*^9}, {
+   3.636113142822894*^9, 3.6361131445249915`*^9}, {3.6361131981630597`*^9, 
+   3.6361132000511675`*^9}, 3.636114037344058*^9, {3.6403541394862127`*^9, 
+   3.640354141565332*^9}, {3.641811338667535*^9, 3.6418113401636205`*^9}, {
+   3.641811372916494*^9, 3.641811376794716*^9}, {3.6418114120867343`*^9, 
+   3.6418114209302397`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {"\<\"STATE\"\>", "3", "267065", "3", "1", 
+     "2", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "288", "0", "0"},
+    {"\<\"TRIAL\"\>", "2", "2", "1", "120.`", "250.`", "4", "4000.`", 
+     "2000.`", "0.`", "0.`", "\<\"\"\>", "\<\"\"\>"},
+    {"\<\"STATE\"\>", "3", "267120", "55", "2", 
+     "3", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "560", "0", "0"},
+    {"\<\"STATE\"\>", "3", "271360", "3", "2", 
+     "3", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "564", "0", "0"},
+    {"\<\"STATE\"\>", "3", "276400", "38", "2", 
+     "4", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "580", "0", "0"},
+    {"\<\"STATE\"\>", "3", "277405", "3", "2", 
+     "8", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "646", "0", "0"},
+    {"\<\"STATE\"\>", "3", "281414", "4", "2", 
+     "10", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "678", "0", "0"},
+    {"\<\"STATE\"\>", "3", "281425", "11", "2", 
+     "14", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", 
+     "742", "0", "0"},
+    {"\<\"STATE\"\>", "3", "281435", "10", "2", 
+     "14", "\<\"FALSE\"\>", "\<\"TRUE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", 
+     "740", "0", "0"},
+    {"\<\"STATE\"\>", "3", "295748", "3", "2", 
+     "14", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>", "\<\"FALSE\"\>",
+      "736", "0", "0"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{{
+    "STATE", 3, 267065, 3, 1, 2, "FALSE", "FALSE", "FALSE", "FALSE", 288, 0, 
+     0}, {"TRIAL", 2, 2, 1, 120., 250., 4, 4000., 2000., 0., 0.}, {
+    "STATE", 3, 267120, 55, 2, 3, "FALSE", "FALSE", "FALSE", "FALSE", 560, 0, 
+     0}, {"STATE", 3, 271360, 3, 2, 3, "FALSE", "TRUE", "FALSE", "FALSE", 564,
+      0, 0}, {"STATE", 3, 276400, 38, 2, 4, "FALSE", "TRUE", "FALSE", "FALSE",
+      580, 0, 0}, {
+    "STATE", 3, 277405, 3, 2, 8, "FALSE", "TRUE", "TRUE", "FALSE", 646, 0, 
+     0}, {"STATE", 3, 281414, 4, 2, 10, "FALSE", "TRUE", "TRUE", "FALSE", 678,
+      0, 0}, {"STATE", 3, 281425, 11, 2, 14, "FALSE", "TRUE", "TRUE", "FALSE",
+      742, 0, 0}, {
+    "STATE", 3, 281435, 10, 2, 14, "FALSE", "TRUE", "FALSE", "FALSE", 740, 0, 
+     0}, {"STATE", 3, 295748, 3, 2, 14, "FALSE", "FALSE", "FALSE", "FALSE", 
+     736, 0, 0}}]]], "Output",
+ CellChangeTimes->{3.6418114237664022`*^9, 3.64181149784964*^9, 
+  3.641811735425228*^9, 3.641813217538*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"trial34", "=", 
+   RowBox[{"Join", "[", 
+    RowBox[{"trial3", ",", " ", "trial4"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.640353549003439*^9, 3.6403535779290934`*^9}, 
+   3.6418113217085648`*^9, {3.6418114013071175`*^9, 3.6418114056413655`*^9}, {
+   3.6418114433695235`*^9, 3.641811444647597*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["PP2TrialType/PP2TrialTypeList", "Subsection",
+ CellChangeTimes->{3.6418115086872597`*^9, 3.6418116896056075`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PP2TrialType", "[", "trial3", "]"}], " ", "\[Equal]", " ", 
+  "\"\<GO\>\""}]], "Input",
+ CellChangeTimes->{{3.6418117600056343`*^9, 3.6418117642048745`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.641811753551265*^9, 3.6418117647089033`*^9}, 
+   3.6418132175910034`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PP2TrialTypeList", "[", "trial3", "]"}], "==", 
+  RowBox[{"{", "\"\<GO\>\"", "}"}]}]], "Input",
+ CellChangeTimes->{{3.640353709028592*^9, 3.6403537114447303`*^9}, {
+  3.641811782395915*^9, 3.641811795876686*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.641811789235306*^9, 3.6418117966357293`*^9}, 
+   3.6418132176000032`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "This", " ", "should", " ", "give", " ", "an", " ", "error", " ", "and", 
+     " ", "return", " ", "\"\<Invalid!\>\""}], ",", " ", 
+    RowBox[{
+    "because", " ", "it", " ", "has", " ", "more", " ", "than", " ", "one", 
+     " ", 
+     RowBox[{"trial", ".", " ", "Use"}], " ", "PP2TrialTypeList", " ", 
+     "instead"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"PP2TrialType", "[", "trial34", "]"}], "\[Equal]", 
+   "\"\<Invalid!\>\""}]}]], "Input",
+ CellChangeTimes->{
+  3.6403540337281637`*^9, {3.64181180889143*^9, 3.641811861649448*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"PP2TrialTypeList", "::", "trialError"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Something is wrong with this trial!\"\>"}]], "Message", \
+"MSG",
+ CellChangeTimes->{
+  3.6403540347482224`*^9, 3.6404121846732078`*^9, 3.640496091134039*^9, 
+   3.640926537023121*^9, 3.641644535475933*^9, 3.6417062017347827`*^9, 
+   3.6417947834036283`*^9, {3.6418118143557425`*^9, 3.6418118249993515`*^9}, 
+   3.6418118631515336`*^9, 3.641813217754012*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.6403540347492228`*^9, 3.640412184675208*^9, 3.640496091143039*^9, 
+   3.6409265370311213`*^9, 3.6416445354839334`*^9, 3.641706201751784*^9, 
+   3.641794783405628*^9, {3.641811814357743*^9, 3.6418118250013514`*^9}, 
+   3.641811863153534*^9, 3.641813217756013*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PP2TrialTypeList", "[", "trial34", "]"}], "==", 
+  RowBox[{"{", 
+   RowBox[{"\"\<GO\>\"", ",", "\"\<NOGO\>\""}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.640353709028592*^9, 3.640353718155114*^9}, {
+  3.641811871986039*^9, 3.6418118766433053`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.641811867897805*^9, 3.641811877793371*^9}, 
+   3.641813217765013*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{783, 878},
+WindowMargins->{{Automatic, 170}, {22, Automatic}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3641820412-2711134"->{
+  Cell[8144, 214, 182, 4, 40, "Print",
+   CellTags->"Info3641820412-2711134"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3641820412-2711134", 19249, 491}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 118, 1, 101, "Title"],
+Cell[701, 25, 119, 2, 31, "Input"],
+Cell[823, 29, 618, 18, 91, "Text"],
+Cell[1444, 49, 615, 18, 91, "Text"],
+Cell[2062, 69, 665, 13, 21, "Message"],
+Cell[2730, 84, 706, 13, 21, "Message"],
+Cell[3439, 99, 655, 12, 21, "Message"],
+Cell[4097, 113, 722, 14, 21, "Message"],
+Cell[4822, 129, 657, 12, 21, "Message"],
+Cell[5482, 143, 724, 14, 21, "Message"],
+Cell[CellGroupData[{
+Cell[6231, 161, 101, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[6357, 166, 426, 8, 52, "Input"],
+Cell[6786, 176, 557, 7, 31, "Output"]
+}, Open  ]],
+Cell[7358, 186, 263, 5, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7658, 196, 94, 1, 70, "Section"],
+Cell[CellGroupData[{
+Cell[7777, 201, 215, 5, 79, "Subsection"],
+Cell[CellGroupData[{
+Cell[8017, 210, 124, 2, 31, "Input"],
+Cell[8144, 214, 182, 4, 40, "Print",
+ CellTags->"Info3641820412-2711134"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8363, 223, 593, 12, 31, "Input"],
+Cell[8959, 237, 3198, 64, 191, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12194, 306, 593, 12, 31, "Input"],
+Cell[12790, 320, 2892, 57, 176, "Output"]
+}, Open  ]],
+Cell[15697, 380, 343, 7, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16077, 392, 119, 1, 49, "Subsection"],
+Cell[CellGroupData[{
+Cell[16221, 397, 192, 4, 31, "Input"],
+Cell[16416, 403, 127, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16580, 410, 247, 5, 31, "Input"],
+Cell[16830, 417, 127, 2, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16994, 424, 629, 16, 72, "Input"],
+Cell[17626, 442, 493, 11, 21, "Message"],
+Cell[18122, 455, 318, 5, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18477, 465, 283, 6, 31, "Input"],
+Cell[18763, 473, 123, 2, 64, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

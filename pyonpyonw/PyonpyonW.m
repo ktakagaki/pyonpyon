@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* Mathematica Package *)
-BeginPackage["PyonpyonW`",{"HokahokaW`","NounouW`","ParaparaW`"}]
+BeginPackage["PyonpyonW`",{"HokahokaW`","ParaparaW`"}]
 
 
 HHPackageMessage["PyonpyonW`"];
